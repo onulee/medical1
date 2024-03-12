@@ -11,7 +11,7 @@ num_list[11] = "Q"
 num_list[12] = "K"
 
 # 카드 1세트를 구현 : 52장
-card_list = [[0]*2 for i in range(52)]
+card_list = [[0]*2 for i in range(52)] # 지역변수
 cnt = 0
 for i in shape_list: # "spade","diamond","heart","clover" 
     for j in range(13):
