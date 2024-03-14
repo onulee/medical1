@@ -60,7 +60,7 @@ while True:
                 print(s,end ='\t')
             print()
         kors,engs,maths,totals = 0,0,0,0 
-        for j, stu in enumerate(students):
+        for stu in students:
             kors += stu[2]
             engs += stu[3]
             maths += stu[4]

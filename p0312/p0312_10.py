@@ -4,7 +4,7 @@ import random
 # 카드 숫자 : A,2,3,4,5,6,7,8,9,10,J,Q,K   13장
 # 카드 총 수 : 52장
 
-def card_creat():
+def card_create():
     pass
 
 def card_shuffle():
@@ -15,6 +15,18 @@ def card_share():
 
 def card_print():
     pass
+
+
+c_shape = ["SPADE", "DIAMOND", "HEART", "CLOVER"]
+c_number = [0]*13
+for i in range(13):
+    c_number[i] = i+1
+c_number[0] = "A"    
+c_number[11] = "J"    
+c_number[12] = "Q"    
+c_number[13] = "K"    
+
+
 
 while True:
     print("[ 카드 프로그램 ]")
@@ -27,7 +39,7 @@ while True:
     choice = int(input("원하는 번호를 입력하세요.>> "))
 
     if choice == 1:
-        card_creat()
+        card_create()
     elif choice == 2:
         card_shuffle()     
     elif choice == 3:
