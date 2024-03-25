@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>colspan,rowspan</title>
+        <style>
+            table{border-collapse: collapse; text-align: center;
+            font-weight: 700;}
+            table,th,td{border:1px solid black;}
+
+        </style>
+    </head>
+    <body>
+        <table>
+            <colgroup>
+              <col width="100px">
+              <col width="300px">
+              <col width="100px">
+              <col width="300px">
+            </colgroup>
+            <tr>
+                <td>이름</td>
+                <td></td>
+                <td>연락처</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td>자기소개</td>
+                <td colspan="3"></td>
+               
+            </tr>
+        </table>
+            
+    </body>
+</html>

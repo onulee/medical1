@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>표만들기</title>
+        <style>
+            table{border-collapse: collapse;
+            text-align: center;}
+            table,th,td{ border:1px solid black; }
+        </style>
+    </head>
+    <body>
+        
+        <!--4행 9열 -->
+        <table>
+           
+            <tr>
+                <td>1행 1열</td>
+                <td>1행 2열</td>
+                <td>1행 3열</td>
+                <td>1행 4열</td>
+                <td colspan="5">1행 5열</td>
+            </tr>
+            <tr>
+                <td>2행 1열</td>
+                <td>2행 2열</td>
+                <td colspan="5">2행 3열</td>
+                <td>2행 8열</td>
+                <td>2행 9열</td>
+            </tr>
+            <tr>
+                <td>3행 1열</td>
+                <td colspan="3">3행 2열</td>
+                <td>3행 5열</td>
+                <td>3행 6열</td>
+                <td>3행 7열</td>
+                <td>3행 8열</td>
+                <td>3행 9열</td>
+            </tr>
+            <tr>
+                <td>4행 1열</td>
+                <td>4행 2열</td>
+                <td>4행 3열</td>
+                <td>4행 4열</td>
+                <td>4행 5열</td>
+                <td>4행 6열</td>
+                <td colspan="3">4행 7열</td>
+            </tr>
+        </table>
+
+        <hr>
+        
+        <!--5행 3열 -->
+        <table>
+            <tr>
+                <td rowspan="3">1행 1열</td>
+                <td>1행 2열</td>
+                <td rowspan="4">1행 3열</td>
+            </tr>
+            <tr>
+                <td rowspan="4">2행 2열</td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td>4행 1열</td>
+            </tr>
+            <tr>
+                <td>5행 1열</td>
+                <td>5행 3열</td>
+            </tr>
+        </table>
+        <hr>
+        <table>
+            <tr>
+                <td>1행 1열</td>
+                <td>1행 2열</td>
+                <td>1행 3열</td>
+            </tr>
+            <tr>
+                <td>2행 1열</td>
+                <td>2행 2열</td>
+                <td>2행 3열</td>
+            </tr>
+        </table>
+    </body>
+</html>
