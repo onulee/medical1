@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 | 리솜리조트</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+        *{margin:0; padding:0;
+            font-family: "Nanum Gothic", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        header{width:100%; height:140px;
+        border-bottom:1px solid #a9b8cc; }
+        #banner{width:100%; height:320px;}
+        #location{ width:1200px; margin:0 auto; text-align: right;
+            font-size:13px; font-weight: 700; color:#5c5c5c; 
+        padding-top:38px; padding-right:13px;}
+        #sub_title{font-size: 40px; font-weight: 700;
+        color:#333; text-align: center;
+        padding-top:40px; padding-bottom:20px;
+        }
+        form{width:600px; height:1000px; margin:0 auto; }
+        ul{list-style:none;}
+        label{display:block; font-size:16px; font-weight: 500;
+        margin:15px 0 10px;
+        }
+        span{font-size:16px; font-weight:700; color: #96694c;
+             margin-right:5px;
+        }
+        input{border:1px solid #ddd; width:100%; height:50px; 
+        font-size:15px; padding-left:20px; box-sizing: border-box; }
+        #name_title{width:100%; height:50px;}
+        #name{width:475px; background: #efefef; }
+        a{text-decoration: none; color:#333; text-align: center;
+            display: inline-block; width:115px; height:50px; box-sizing: border-box;
+            border: 1px solid #ddd; margin:0;
+            line-height:50px;
+        }
+        #phone{background: #efefef;}
+        ul { margin-top:10px;}
+        li {font-size:14px; color:#555; line-height:1.6;
+        }
+        button{display: block; margin:70px auto; width:180px; height:50px;
+            background:#96694c; line-height: 50px; color:white; font-weight: 700;
+            text-align: center;
+            border:0;
+         }
+    </style>
+</head>
+<body>
+    <header></header>
+    <div id="banner">
+        <img src="img_subbanner_event.jpg">
+    </div>
+    <div id="location">HOME > 회원가입</div>
+    <div id="sub_title">회원가입</div>
+    <form action="#" name="frm" method="get">
+        <label><span>*</span>아이디</label>
+        <input type="text" name="id" id="id" required placeholder="아이디를 입력하세요.">
+        <ul>
+            <li>- 4~16자리의 영문 소문자, 숫자, 특수기호( _ )만 사용</li>
+            <li>- 첫 글자는 영문으로 입력</li>
+        </ul>
+        <label><span>*</span>비밀번호</label>
+        <input type="password" name="pw" id="pw" required placeholder="패스워드를 입력하세요.">
+        <ul>
+            <li>- 최소 10글자 이상 소문자, 대문자, 숫자, 특수문자를 포함해야 됩니다.</li>
+            <li>- 가능한 특수문자 : {}[]/?.,;:)(*~`!^-_+<>@#$%&=</li>
+        </ul>
+        <label><span>*</span>비밀번호 확인</label>
+        <input type="password" name="pw2" id="pw2" required placeholder="패스워드를 입력하세요.">
+        
+        <label><span>*</span>이름 (실명인증 필요)</label>
+        <div id="name_title">
+            <input type="text" name="name" id="name" required placeholder="이름을 입력하세요.">
+            <a href="https://pcc.siren24.com/pcc_V3/passWebV2/pcc_V3_j10.jsp" target="_blank" >휴대폰 인증</a>
+        </div>
+        <label><span>*</span>휴대폰 번호</label>
+        <input type="text" name="phone" id="phone" required >
+        <label><span>*</span>유선전화</label>
+        <input type="text" name="tel" id="tel" required placeholder="ex) 02-123-4567" >
+        <button type="submit">회원가입</button>
+    </form>
+    
+</body>
+</html>

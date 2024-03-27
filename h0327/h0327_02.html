@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        *{  margin:0; padding:0;
+            font-family: "Noto Sans KR", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #main{width:1180px; height:133px; margin:50px auto;
+        border-top:1px solid #202020; background:#f7f7f7;
+        padding:32px; box-sizing: border-box;  }
+        form{margin:0 auto; width:650px; height:68px; 
+            box-sizing: border-box;
+            border:2px solid #202020;
+            background:white;
+        }
+        input{ width:594px; height:64px;  border:0;
+         font-size:20px; font-weight: 700;
+        color:#101010; padding-left:20px;
+        box-sizing: border-box; float:left; }
+
+        button{width:32px; height:32px; border:0; 
+        background-size:800px 800px;
+        background:url("ico_set.png") -600px -150px no-repeat;
+        position: relative;
+        top:17px;
+        }
+    </style>
+    <script>
+        function btn(){
+            alert("네이버 페이지로 이동합니다.");
+            frm.submit();
+        }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <form action="http://www.naver.com" name="frm" method="get">
+            <input type="text" name="search" placeholder="검색어를 입력해주세요">
+            <button type="button" onclick="btn()"></button>
+        </form>
+    </div>
+   
+    
+</body>
+</html>
