@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        * {margin:0; padding:0; }
+        #header{width:1200px; height:510px; border:2px solid black; 
+        box-sizing: border-box; margin:100px auto 500px;
+        /* 정렬 */
+        display: flex;
+        /* 가로정렬 : 왼쪽정렬:flex-start, flex-end,center,space-between,space-around */
+        justify-content: space-between;
+        /* 세로정렬 : stretch, flex-start, flex-end, center, baseline */
+        align-items : center;
+    
+    }
+        .c{width:300px; height:300px; border:2px solid black;
+        background: aqua; 
+        
+    }
+        
+
+        #main{width:1200px; height:310px; border:2px solid black; 
+        box-sizing: border-box; margin:0 auto;}
+        .sub{width:300px; height:300px; border:2px solid black;
+        background: green; float:left; }
+        .sub2{width:100px; height:300px; border:1px solid black;
+        clear:both; background: yellow;}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="c">1</div>
+        <div class="c">2</div>
+        <div class="c">3</div>
+    </div>
+
+    <hr>
+
+    <div id="main">
+        <div class="sub">1</div>
+        <div class="sub">2</div>
+        <div class="sub">3</div>
+        <div class="sub2">aaaaa</div>
+    </div>
+    <p>html5</p>
+    <p>html6</p>
+    <p>html7</p>
+    
+</body>
+</html>
