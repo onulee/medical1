@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>삼성전자 지속가능경영</title>
+    <script>
+        $(function(){
+            
+        });
+
+        function enterBtn(){
+            $(".sub01").css("display","block");
+        }
+        function leaveBtn(){
+            $(".sub01").css("display","none");
+        }
+
+        
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        * {margin:0; padding:0;
+                font-family: "Noto Sans KR", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+        }
+        ul{display: flex;}
+        li{list-style: none;}
+        a{text-decoration: none; color:#000; }
+        header{width:100%; height:80px; border-bottom:1px solid #ddd; }
+        nav{width:1600px; height:80px; margin:0 auto; 
+            display: flex; justify-content: space-between; align-items: center;
+             }
+        .logo{width:104px; height:16px;  }
+        .logo img{width:104px; }
+        .menu{width:1300px; height:28px;  }
+        .menu a{width:110px; height:30px; font-size:15px; font-weight: 600;
+                display: inline-block; text-align: center;
+            line-height: 27px;}
+        .menu .m01{width:70px;}
+        .menu .m01 .sub{position: absolute; background: white;
+        border-top:1px solid #ddd; border-radius: 0 0 20px 20px;
+        padding: 9px 0 35px; top:80px; z-index: 100; }
+        .menu .m01 .sub01{width:1100px; height:132px; display: none;}
+        .menu .m01 .sub01:hover{display: block;}
+        .menu .m02{width:70px;}
+        .menu .m03{width:85px;}
+        .menu .m04{width:68px;}
+        .menu a:hover{color:white; background: black; border-radius: 16px; }
+
+
+
+        .banner{width:100%; height:810px; position: relative; }
+        .banner .title1 { width:100%; text-align: center;
+            font-size: 38px; color:white; text-shadow: 2px 2px 5px #000;
+            letter-spacing: -0.5px; font-weight: 700;
+            position: absolute; top:260px; z-index:30; }
+        .banner .title2 { width:100%; text-align: center;
+            font-size:25px; color:white; text-shadow: 2px 2px 5px #000;
+            position: absolute; top:340px; z-index:30; }
+        .banner video {width:100%; position: absolute; top:0; z-index:1;}
+        .qmenu{width:104px; height:80px; 
+          display: flex; align-items: center; }
+        .qmenu li{text-align: right;   }
+        .qmenu .q01{width:21.5px; height:21.5px;  }
+        .qmenu img{width:22px; vertical-align: middle;}
+        .qmenu .q02{width:78px; height:21.5px;  }
+        .qmenu .q02 span{font-size: 16px; font-weight: 700;}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="SAMSUNG">
+            </div>
+            <div class="menu">
+                <ul>
+                    <a href="#" class="m01" onmouseenter="enterBtn()" onmouseleave="leaveBtn()"><li>Planet
+                        <div class="sub sub01">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+
+                    </li></a>
+                    <a href="#" class="m02"><li>People</li></a>
+                    <a href="#" class="m03"><li>Principle</li></a>
+                    <a href="#" class="m04"><li>Focus</li></a>
+                    <a href="#" class="m05"><li>Digital Library</li></a>
+                </ul>
+            </div>
+            <div class="qmenu">
+                <ul>
+                    <li class="q01">
+                        <img src="images/search.png">
+                    </li>
+                    <li class="q02">
+                        <img src="images/language.png">
+                        <span>KR</span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <article class="banner">
+            <div class="title1">Our Journey Towards A Sustainable Future</div>
+            <div class="title2">지속가능한 미래를 위한 삼성전자의 여정</div>
+            <video src="images/Home.mp4" autoplay loop muted></video>
+        </article>
+    </section>
+    
+</body>
+</html>

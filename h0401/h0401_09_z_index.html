@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c2{visibility: hidden;}
+        /*
+        .c2{display: none;}
+        */
+        .main{width:1000px; height: 900px; border:1px solid black;
+         margin:0 auto; }
+         div{font-size: 40px;}
+         .d{width:300px; height:200px; border:5px solid black; position: relative; }
+         .d01{background: red; left:100px; z-index: 100;}
+         .d02{background: yellow; top:-150px; z-index:1; }
+         .d03{background: blueviolet; left:200px; top:-300px; z-index: 200;}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="d d01">1</div>
+        <div class="d d02">2</div>
+        <div class="d d03">3</div>
+
+    </div>
+
+
+    <div>
+        <img src="images/01.jpg">
+        <img class="c2" src="images/02.jpg">
+        <img src="images/03.jpg">
+    </div>
+    
+</body>
+</html>

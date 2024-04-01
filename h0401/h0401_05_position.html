@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        * {margin:0; padding:0;}
+        .main{width:900px; height:800px; border:3px solid black;
+        margin:50px auto; }
+        div{width:300px; height:200px;  }
+        /*  position:absolute;  부모의 기준점으로 이동, body기준으로 이동 */
+        .main{position:relative;}
+        .c01{background: green; position: relative; left:0; top:0; }
+        .c02{background: blue; position:absolute;left:500px; top:0;  }
+        /*  position:relative; 현재기준점으로 이동
+        .c01{background: green; position: relative; left:150px; top:100px;}
+        .c02{background: blue; position:relative; left:375px; }
+        */
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="c01"></div>
+        <div class="c02"></div>
+       
+    </div>
+    
+</body>
+</html>
