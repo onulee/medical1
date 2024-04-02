@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth-child</title>
+    <style>
+        ul{list-style: none;}
+        ul li{ width:200px; height:40px; border:1px solid black; }
+        ul li:nth-child(2n+1){
+            background:yellow;
+        }
+        ul li:first-child{border-top-left-radius: 10px;
+        border-top-right-radius: 10px;}
+        ul li:last-child{border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;;}
+
+
+        ul li:nth-child(2){background:blue;}
+        p{width:200px; height:40px; border:1px solid black;}
+        p:nth-of-type(3){color:red; }
+    </style>
+</head>
+<body>
+    <h2>건강에 좋은 건강식품</h2>
+    <div>
+        <p>구글</p>
+        <div>지마켓</div>
+        <p>다음</p>
+        <p>네이버</p>
+        <p>쿠팡</p>
+    </div>
+    <ul>
+        <li>블루베리</li>
+        <li>귀리</li>
+        <li>토마토</li>
+        <li>시금치</li>
+        <li>적포도주</li>
+        <li>견과류</li>
+        <li>브로콜리</li>
+        <li>연어</li>
+        <li>마늘</li>
+        <li>녹차</li>
+    </ul>
+</body>
+</html>

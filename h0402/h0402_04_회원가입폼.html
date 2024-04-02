@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>속성선택자</title>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <form action="#" name="frm" method="get">
+        <label>이름</label>
+        <input type="text" name="name" id="name" value="홍길동" disabled><br>
+        <label>아이디</label>
+        <input type="text" name="id" id="id"><br>
+        <label>패스워드</label>
+        <input type="password" name="pw" id="pw"><br>
+        <label>성별</label><br>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">여자</label>
+        <br>
+        <label>취미</label><br>
+        <input type="checkbox" name="hobby" id="game" value="game">
+        <label for="game">게임</label>
+        <input type="checkbox" name="hobby" id="golf" value="golf">
+        <label for="golf">골프</label>
+        <input type="checkbox" name="hobby" id="swim" value="swim">
+        <label for="swim">수영</label>
+        <input type="checkbox" name="hobby" id="run" value="run">
+        <label for="run">조깅</label>
+        <input type="checkbox" name="hobby" id="book" value="book">
+        <label for="book">독서</label>
+        <br><br>
+        <input type="submit" onclick="btn()" value="가입완료">
+        <input type="reset" value="취소">
+        <br>
+    </form>
+    <script>
+        function btn(){
+            /*
+            count = $("input[name='hobby']:checked").length;
+            alert("체크박스에서 체크된 개수 : "+count);
+            */
+            frm.sumbit();
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>포레스트 리솜</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        *{margin:0; padding:0; font-family: "Nanum Gothic", sans-serif;
+            font-weight: 400;  font-style: normal;}
+        body{height:2000px; }    
+        ul{list-style: none;}
+        a{text-decoration: none;}
+        header{width:100%; height:121px; border-bottom: 1px solid #e8e8e8;
+        position:fixed; top:0; left:0; z-index:100; background:#fff; }
+        nav{width:1290px; height:121px; margin:0 auto; display: flex; }
+        #logo{ width:132px; padding-top:47px; box-sizing: border-box;}
+        #navi{width:1158px; height:121px;}
+        .qmenu ul { height:60px; display: flex; justify-content: right;
+                   align-items: center; }
+        .qmenu ul li{height:30px;  }
+        .qmenu li a{display: inline-block; font-size:12px; color:#8a8d8f;
+        width:100px; height:15px; letter-spacing: -0.5; text-align: right; }
+        .qmenu li a:after{ display: inline-block; content:''; width:1px; height: 11px;
+        background:#d3d3d3; margin-left:13px; vertical-align: middle;}
+        .qmenu li .q02{width:91px; }
+        .qmenu li .q04{width:75px; }
+        .qmenu li .q05{width:45px; }
+        .qmenu li .q05:after{display: inline-block; content:''; width:0; margin-left:0; }
+        .menu ul{height:30px; display: flex; justify-content: right;
+        align-items: self-end; }
+        .menu li a{display: inline-block; font-size:19px; color:#1d1d1d;
+            font-weight: 700; line-height: 1.2; letter-spacing: -0.5;
+            width:180px; height:15px;  text-align: right; }
+        .menu li .m03{width:130px; }  
+        section{ position:relative; top:121px; left:0; }
+        #banner{ width:100%; height:820px;
+            background: url('images/img_re_main_slide_20240220_pc.jpg') no-repeat;
+            background-size: cover; } 
+        #banner .title{width:100%; position: relative; top:35%; 
+             text-align: center;}  
+        #banner .title p:nth-child(1){ font-size:20px; color:#fff; letter-spacing: 3px; 
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto; font-weight: 700; font-style: normal;  } 
+        #banner .title p:nth-child(2){ 
+            font-size:48px; color:#fff; font-weight: 700; 
+            padding-top: 15px; 
+        }  
+        #banner .title p:nth-child(3){ margin-top:30px;
+            font-size:24px; color:#fff; font-weight: 700; letter-spacing: -1px;
+        }
+        #banner .title div{ color:white;
+            width:190px; height:55px; border:1px solid white;
+            margin:48px auto 0; line-height: 55px;
+        }
+        #content{ width:1290px; margin:0 auto;}
+        #content article h2{text-align: center; margin:120px 0 35px;
+        font-size: 32px; color:#1b1b1c; letter-spacing: 0.3em;}
+        #eventCon{ display: flex; justify-content: space-between; }
+        .econt{width:410px; height:355px;  }
+        .econt1{width:410px; height:255px; overflow:hidden; background-size: 120%;
+        }
+        .econt1 div{width:70px; height:45px; background: #907559;
+        position:relative; left:10px; top:10px; font-size:15px; color:white;
+    font-weight: 600; line-height: 45px; text-align: center; }
+        .e_img1{ background: url('images/L2024031914103461580_00.jpg') -36px -15px no-repeat;
+                 background-size: 120%; }
+        .e_img2{ background: url('images/L2023071017281318970_00.jpg') -36px -15px no-repeat; 
+                 background-size: 120%;}
+        .e_img3{ background: url('images/L2024020816060892970_00.jpg') -36px -15px no-repeat;
+                 background-size: 120%; }
+        .e_img4{ background: url('images/img04.jpg') -36px -15px no-repeat;
+                 background-size: 120%; }
+        .e_img5{ background: url('images/img05.jpg') -36px -15px no-repeat; 
+                 background-size: 120%;}
+        .e_img6{ background: url('images/img06.jpg') -36px -15px no-repeat;
+                 background-size: 120%; }
+        .econt2{width:410px; height:100px;  }
+        .econt2 .tit{font-size:20px; color:#1d1d1d; letter-spacing: -0.05em;
+        font-weight: 600; padding-top:38px;}
+        .econt2 .tit2{font-size:15px; color:#5c5c5c; letter-spacing: -0.02em;
+        font-weight: 400; padding-top:15px;}
+        
+        .mem_wrap{width:100%; height:600px; background: #183029;
+          margin-top:120px;
+        }
+        .center{width:1920px; height:600px; margin:0 auto;
+            display: flex; justify-content: center; }
+        .mem_left{width:50%; height:600px;  }
+        .mem_lset{width:645px; height:600px; float:right;}
+        .mem_lset p:nth-child(1){
+            padding-top:113px; font-size:32px; color:#537c70;
+            font-weight: 600; font-family: 'montserrat';
+            letter-spacing: 0.3em;
+        }
+        .mem_lset p:nth-child(2){
+            padding-top:52px; font-size:40px; color:white;
+            font-weight: 600; letter-spacing: -0.03em;
+        }
+        .mem_lset p:nth-child(3){
+            padding-top:23px; font-size:16px; color:white;
+            font-weight: 300; line-height: 2.2;
+        }
+        .mem_lset div{width:270px; height:69px; background:#0b1915; text-align: center;
+        float:right; color:white; font-size: 17px; font-weight: 600;
+        line-height: 70px; letter-spacing: -0.05em;
+        }
+        .mem_right{ clear:both; width:50%; height:600px;
+          background: url('images/img_re_main_membership.jpg') no-repeat;
+        background-size: 960px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">
+                <a href="#"><img src="images/img_logo_re_forest.png"></a>
+            </div>
+            <div id="navi">
+                <div class="qmenu">
+                    <ul>
+                        <li><a href="#" class="q01">회원예약</a></li>
+                        <li><a href="#" class="q02">패키지 예약</a></li>
+                        <li><a href="#" class="q03">부대시설 예약</a></li>
+                        <li><a href="#" class="q04">회원가입</a></li>
+                        <li><a href="#" class="q05">로그인</a></li>
+                    </ul>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li class="li01"><a href="#" class="m01">포레스트</a></li>
+                        <li class="li02"><a href="#" class="m02">해브나인</a></li>
+                        <li class="li03"><a href="#" class="m03">객실</a></li>
+                        <li class="li04"><a href="#" class="m04">특별한 경험</a></li>
+                        <li class="li05"><a href="#" class="m05">세미나 & 연회</a></li>
+                        <li class="li06"><a href="#" class="m06">브랜드소개</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <!--banner 부분-->
+        <div id="banner">
+            <div class="title">
+                <p>RESONATING MOMENTS</p>
+                <p>꽃피다, 봄이다, 우리가 떠나야 할 이유</p>
+                <p>자연의 품에서 진정한 쉼을 경험하세요.</p>
+                <div>자세히 보기&nbsp&nbsp<i class="fa-solid fa-spinner fa-spin"></i></div>
+            </div>
+        </div>
+        <div id="content">
+            <!--EVENT 부분-->
+            <article>
+                <h2>EVENT</h2>
+                <div id="eventCon">
+                    <div class="econt">
+                        <div class="econt1 e_img1">
+                            <div>이벤트</div>
+                        </div>
+                        <div class="econt2">
+                            <p class="tit">[4월] 행복이 피어나는 블루밍 리솜</p>
+                            <p class="tit2">이용기간 : 2024.04.05~2024.04.30</p>
+                        </div>
+                    </div>
+                    <div class="econt">
+                        <div class="econt1 e_img2">
+                            <div>이벤트</div>
+                        </div>
+                        <div class="econt2">
+                            <p class="tit">[4월] 행복이 피어나는 블루밍 리솜</p>
+                            <p class="tit2">이용기간 : 2024.04.05~2024.04.30</p>
+                        </div>
+                    </div>
+                    <div class="econt">
+                        <div class="econt1 e_img3">
+                            <div>이벤트</div>
+                        </div>
+                        <div class="econt2">
+                            <p class="tit">[4월] 행복이 피어나는 블루밍 리솜</p>
+                            <p class="tit2">이용기간 : 2024.04.05~2024.04.30</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!--package 부분-->
+            
+            <article>
+                <h2>PACKAGE</h2>
+                <div id="eventCon">
+                    <div class="econt">
+                        <div class="econt1 e_img4"></div>
+                        <div class="econt2">
+                            <p class="tit">스윗 골드 에디션</p>
+                            <p class="tit2">이용기간 : 2024.04.01~2024.06.30</p>
+                        </div>
+                    </div>
+                    <div class="econt">
+                        <div class="econt1 e_img5"></div>
+                        <div class="econt2">
+                            <p class="tit"> 베이비문 포레스트 (with 압소바)</p>
+                            <p class="tit2">이용기간 : 2024.03.18~2024.06.30</p>
+                        </div>
+                    </div>
+                    <div class="econt">
+                        <div class="econt1 e_img6"></div>
+                        <div class="econt2">
+                            <p class="tit">꼬마 숲탐험 패키지</p>
+                            <p class="tit2">이용기간 : 2024.03.01~2024.04.30</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <!-- membership 부분 -->
+        <div class="mem_wrap">
+            <div class="center">
+                <div class="mem_left">
+                    <div class="mem_lset">
+                        <p>MEMBERSHIP</p>
+                        <p>리솜리조트 특별회원</p>
+                        <p>대한민국 단 하나의 원시 자연림 리조트 포레스트 리솜,
+                            <br>
+                            오감형 웰니스 라이프 리조트, 레스트리,
+                            <br>
+                            비행 없이 만나는 세계적인 선셋 리조트 아일랜드 리솜
+                            <br>
+                            사계절 온천 워터파크 리조트 스플라스 리솜,
+                            <br>
+                            제주 중문 오션뷰 해양레저테마파크 퍼시픽 리솜,
+                            <br>
+                            숲과 바다, 온천, 액티비티까지 다양한 테마와 콘텐츠를 누리는
+                            <br>
+                            리솜리조트 회원만의 특권을 경험해 보세요</p>
+                        <div>회원 혜택 자세히 보기&nbsp&nbsp<i class="fa-solid fa-spinner fa-spin"></i></div>
+                    </div>
+                </div>
+                <div class="mem_right"></div>
+            </div>
+        </div>
+
+    </section>
+
+    
+</body>
+</html>

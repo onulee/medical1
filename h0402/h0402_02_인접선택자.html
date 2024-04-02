@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형제 선택자</title>
+    <style>
+        section p { color:red; }
+        section>div>h2{color:blue; }
+        .site h2{text-decoration: underline;}
+        /* 인접 형제 선택자 */
+        .site>h2+p{color:orange; }
+        /*모든 형제 선택자 
+        .site>h2~p{color:orange; }
+        */
+    </style>
+</head>
+<body>
+    <h2>반갑습니다.</h2>
+    <section>
+        <div class="site">
+            <h2>구글 사이트</h2>
+            <p>다음 사이트</p>
+            <div>
+                <ul>
+                    <li>바나나</li>
+                    <li>딸기</li>
+                    <li>사과</li>
+                </ul>
+            </div>
+            <p>네이버 사이트</p>
+            <div>쿠팡 사이트</div>
+            <h3>지마켓 사이트</h3>
+        </div>
+    </section>
+</body>
+</html>

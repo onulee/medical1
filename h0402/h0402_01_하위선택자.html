@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하위선택자</title>
+    <style>
+        #container p{color:red; font-weight: 700;} /* 하위 선택자 */
+        #container>ul{border:2px dotted blue; } /* 자식 선택자 */
+        header+p{text-decoration: underline;} /* 인접 형제 선택자 */
+    </style>
+</head>
+<body>
+    <p>요안도라에 오신것을 환영합니다.</p>
+    <section id="container">
+        <header>
+            <h1>예약방법 및 요금</h1>
+        </header>
+        <p>요안도라에 예약하려면?</p>
+        <ul>
+            <li> 예약방법
+                <ul>
+                    <li>직접 통화</li>
+                    <li>문자 남기기</li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>1인 : 40,000원</li>
+                    <li>2인 : 60,000원</li>
+                    <li>3인 : 80,000원</li>
+                    <li>4인 : 100,000원</li>
+                </ul>
+            </li>
+        </ul>
+        
+    </section>
+    
+</body>
+</html>

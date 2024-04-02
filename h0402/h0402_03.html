@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성선택자</title>
+    <style>
+        *{margin:0; padding:0;}
+        h2{width:1000px; text-align: center; margin:0 auto; }
+        section{width:1000px; height:35px; border:1px solid black; 
+        margin:0 auto; }
+        ul{list-style: none; width:1000px; height:35px; 
+            display: flex; justify-content: space-around;}
+        a{text-decoration: none; color:black; font-weight: 700;}
+        a[href] {background:yellow; }
+        a[target='_blank']{color:red; text-decoration: underline;}
+        section a{display: inline-block; width:170px; height:35px; 
+        border:1px solid black; text-align: center; line-height: 30px; }
+    </style>
+</head>
+<body>
+    <h2><a>사이트 모음</a></h2>
+    <section>
+        <ul>
+            <li><a href="" target="_blank">구글 사이트</a></li>
+            <li><a href="">다음 사이트</a></li>
+            <li><a href="">네이버 사이트</a></li>
+            <li><a href="" target="_blank">쿠팡 사이트</a></li>
+        </ul>
+    </section>
+    
+</body>
+</html>
