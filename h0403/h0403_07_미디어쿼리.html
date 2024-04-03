@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+    <style>
+        * {margin:0; padding:0; font-size: 30px; text-align: center;}
+        header{width:100%; height: 120px; background: blueviolet; }
+        section{display: flex;}
+        .left{width:60%; height: 600px; background: yellow; overflow: hidden;}
+        .left_img{width:100%; }
+        .right{width:40%; height:600px; background:greenyellow;}
+        .img{width:100%; height:600px; background: url('images/L2024031914103461580_00.jpg');
+             background-size: 100%; display: none; }
+        footer{width:100%; height:200px; background:brown;}
+
+        @media screen and (max-width:1000px){
+            .right{display: none;}
+            .left{width:100%;}
+        }
+        @media screen and (max-width:600px){
+            .right{display: none;}
+            .left{display: none;}
+            .img{display: block;}
+        }
+    </style>
+</head>
+<body>
+    <header>가변 그리드 레이아웃</header>
+    <section>
+        <div class="left">
+            <img class="left_img" src="images/img_re_main_membership.jpg">
+        </div>
+        <div class="right">사이드바</div>
+        <div class="img"></div>
+    </section>
+    <footer>하단 푸터</footer>
+
+    
+</body>
+</html>

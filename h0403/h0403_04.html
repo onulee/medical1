@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{width:200px; height:200px; border:1px solid black;}
+        .sub{width:200px; height: 200px; 
+             animation: rotate 1.5s infinite alternate;
+        }
+        img{width:200px;}
+
+        @keyframes rotate{
+            from{ transform: perspective(700px) rotateX(0deg) rotateY(0deg) ; 
+                }
+            to { transform: perspective(700px) rotateX(0deg) rotateY(-180deg) ;
+                 
+            }
+           
+        }
+        @keyframes back{
+            from{ background:red; }
+            50%{background:green;}
+            to{background:blue;}
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="sub">
+            <img src="images/L2024031914103461580_00.jpg">
+        </div>
+    </div>
+    
+</body>
+</html>

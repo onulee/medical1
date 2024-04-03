@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형</title>
+    <style>
+        *{margin:0; padding:0;}
+        .main,.main2, .main3, .main4, .main5 {width:1000px; height:500px; margin:0 auto; border:1px solid black;
+        display: flex; justify-content: space-around; align-items: center;}
+        /* transform:skew 기울기 */
+        .main5 .c{width:200px; height:200px; border:1px solid black; }
+        .main5{perspective: 300px;}
+        .main5 .c1:hover{transform: skewX(-30deg);
+        } 
+        .tran_origin{ transform-origin: right bottom; }
+        .main5 .c2:hover{transform: skewY(15deg); }
+        .main5 .c3:hover{transform: skew(-25deg,-15deg);}
+        /* transform:rotate 회전 */
+        .main4 .c{width:200px; height:200px; border:1px solid black; }
+        .main4{perspective: 300px;}
+        .main4 .c1:hover{transform: rotateX(45deg);} 
+        .main4 .c2:hover{transform: rotateY(45deg); }
+        .main4 .c3:hover{transform: scaleZ(1.5);}
+        /* transform:rotate 회전 */
+        .main3 .c{width:200px; height:200px; border:1px solid black; }
+        .main3 .c1:hover{transform: rotate(20deg);}
+        .main3 .c2:hover{transform: rotate(-40deg);}
+        .main3 .c3:hover{transform: rotate3d(2.5, 1.2,-1.5,45deg);}
+
+        /* transform:scale 확대/축소 */
+        .main2 .c{width:200px; height:200px; border:1px solid black; }
+        .main2 .c1:hover{transform: scale(1.5);}
+        .main2 .c2:hover{transform: scaleX(2);}
+        .main2 .c3:hover{transform: scaleY(1.2);}
+        
+        /* transform:translate 이동 */
+        .main .c{width:200px; height:200px; border:1px solid black; }
+        .main .c1:hover{transform: translate(50px,70px);}
+        .main .c2:hover{transform: translateX(30px);}
+        .main .c3:hover{transform: translateY(50px)}
+        img{width:200px; }
+    </style>
+</head>
+<body>
+    <div class="main5">
+        <div class="c c1 ">
+            <img src="images/kar2.png">
+        </div>
+        <div class="c c2">
+            <img src="images/kar2.png">
+        </div>
+        <div class="c c3">
+            <img src="images/kar2.png">
+        </div>
+    </div>
+    <div class="main4">
+        <div class="c c1">
+            <img src="images/kar2.png">
+        </div>
+        <div class="c c2">
+            <img src="images/kar2.png">
+        </div>
+        <div class="c c3">
+            <img src="images/kar2.png">
+        </div>
+    </div>
+    <div class="main3">
+        <div class="c c1">
+            <img src="images/kar2.png">
+        </div>
+        <div class="c c2">
+            <img src="images/kar2.png">
+        </div>
+        <div class="c c3">
+            <img src="images/kar2.png">
+        </div>
+    </div>
+    <div class="main2">
+        <div class="c c1">
+            <img src="images/kar2.png">
+        </div>
+        <div class="c c2">
+            <img src="images/kar2.png">
+        </div>
+        <div class="c c3">
+            <img src="images/kar2.png">
+        </div>
+    </div>
+    <div class="main">
+        <div class="c c1">
+            <img src="images/kar2.png">
+        </div>
+        <div class="c c2">
+            <img src="images/kar2.png">
+        </div>
+        <div class="c c3">
+            <img src="images/kar2.png">
+        </div>
+    </div>
+    
+</body>
+</html>

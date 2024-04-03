@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형</title>
+    <style>
+        *{margin:0; padding:0;}
+        .main{width:1000px; height:500px; margin:0 auto; border:1px solid black;
+        display: flex; justify-content: space-around; align-items: center;}
+        .c{width:200px; height:200px; border:1px solid black; }
+        /* translate 이동 */
+        .c1:hover{ animation: move 1s;}
+        .c2{overflow: hidden;}
+        .img01:hover{ animation: large 1s;
+                   animation-fill-mode: forwards;
+        }
+        @keyframes move{
+            from{ transform: translate(0,0); }
+            to{ transform: translate(30px,40px); }
+        }
+        @keyframes large{
+            from{ transform: scale(1); }
+            to{ transform:scale(1.5); }
+        }
+        img{width:200px; }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="c c1">
+            <img src="images/kar2.png">
+        </div>
+        <div class="c c2">
+            <img class="img01" src="images/L2024031914103461580_00.jpg">
+        </div>
+        <div class="c c3">
+            <img src="images/kar2.png">
+        </div>
+    </div>
+    
+</body>
+</html>

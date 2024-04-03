@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin:0; padding:0;}
+        header{width:100%; height:200px; background: steelblue;}
+        section{display: flex;}
+        .left{width:60%; height:600px; background: tan; display: flex; }
+        .left1{width:33.3%; height: 600px;}
+        .left2{width:33.3%; height: 600px; background: brown;}
+        .left3{width:33.3%; height: 600px; background: yellowgreen;}
+        .right{width:40%; height:600px; background: khaki; }
+        footer{width:100%; height: 300px; background: lavender;}
+        @media screen and (max-width:1600px) {
+            .left1{background: blue;}
+        }
+        @media screen and (max-width:1200px) {
+            .left1{background: green;}
+        }
+        @media screen and (max-width:1000px) {
+            .left{width:100%;}
+            .left1{background: pink;}
+            .right{display: none;}
+        }
+        @media screen and (max-width:800px) {
+            .left1{background: yellow; width:50%;}
+            .left2{width:50%;}
+            .left3{display: none;}
+        }
+        @media screen and (max-width:600px) {
+            .left{display: block; width:100%; height:1200px; }
+            .left1,.left2,.left3{height:400px; }
+            .left1{background: aqua; width:100%;}
+            .left2{display: block; width:100%;}
+            .left3{display: block; width:100%;}
+            section{display: block;}
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <section>
+        <div class="left">
+            <div class="left1"></div>
+            <div class="left2"></div>
+            <div class="left3"></div>
+        </div>
+        <div class="right"></div>
+    </section>
+    <footer></footer>
+    
+</body>
+</html>
