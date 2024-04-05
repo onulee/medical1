@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while</title>
+    <script>
+        // 숫자를 입력받아 1부터 합계를 구하시오.
+        // 예) 5 1-5까지의 합, 100 1-100까지의 합
+        var i = Number(prompt("첫번째 숫자를 입력하세요."))
+        var num = Number(prompt("마지막 숫자를 입력하세요."))
+        var sum = 0;
+        while(i<=num){
+            sum += i;
+            document.write("i 값 : ",i," ");
+            document.write("sum 값 : ",sum,"<br>");
+            i++;
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

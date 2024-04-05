@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리연산자</title>
+    
+</head>
+<body>
+    <script>
+        var a = 10;
+        var b = 20;
+        var c = 30;
+        var d = 40;
+        var result;
+
+        result = (a>b || b>=c);
+        document.write("result : ",result,"<br>");
+        result = (a>d || c>b); // 1가지만 맞아도 true
+        document.write("result : ",result,"<br>");
+        result = (b>a && d>c); // 2가지 모두 true여야 true
+        document.write("result : ",result,"<br>");
+
+        result = !(a>b);
+        document.write("result : ",result,"<br>");
+    </script>
+
+    
+</body>
+</html>

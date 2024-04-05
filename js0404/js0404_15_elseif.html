@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>else if</title>
+    <script>
+        // 12,1,2월 겨울 3,4,5월 봄 6,7,8월 여름 9,10,11월 가을
+        // 1 - 겨울입니다.
+        // 12 - 겨울입니다.
+        // 7 - 여름입니다.
+        var season2 = prompt("월을 입력하세요.");  //string 원본
+        var season1 = season2.slice(0,-1); //string -> 길이 1이 줄어든, 길이 있음.
+        season = Number(season1);     //Number -> 길이 없음.
+
+        if(3<= season && season <=5){  //3<=season<=5
+            document.write("봄입니다.<br>");
+        }else if(6<=season && season <=8){
+            document.write("여름입니다.<br>");
+        }else if(9<= season && season <= 11){
+            document.write("가을입니다.<br>");
+        }else if((1<=season && season<=2) || season==12){
+            document.write("겨울입니다.<br>");
+        }
+
+        document.write("입력글자 : ")
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

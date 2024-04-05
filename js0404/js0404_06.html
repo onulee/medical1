@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 표 ->2행 3열 번호   이름    합계
+        //              1     홍길동  100
+        // table border='1'
+        var html_data = "";
+        html_data += "<h1>학생성적프로그램</h1>";
+        html_data += "<table>";
+        html_data += "<tr><td>번호</td><td>이름</td><td>합계</td></tr>";
+        html_data += "<tr><td>1</td><td>홍길동</td><td>100</td></tr>";
+        html_data += "</table>";
+        document.write(html_data);
+
+        /*
+        document.write("<h1>학생성적프로그램</h1>");
+        document.write("<table> ");
+        document.write("<tr><td>번호</td><td>이름</td><td>합계</td></tr>");
+        document.write("<tr><td>1</td><td>홍길동</td><td>100</td></tr>");
+        document.write("<tr><td>1</td><td>홍길동</td><td>100</td></tr>");
+        document.write("<tr><td>1</td><td>홍길동</td><td>100</td></tr>");
+        document.write("<tr><td>1</td><td>홍길동</td><td>100</td></tr>");
+        document.write("</table>");
+        */
+    </script>
+    <style>
+        table{border-collapse: collapse; }
+        td{width:150px; height:30px; text-align: center; border:1px solid; }
+        
+    </style>
+</head>
+<body>
+
+    
+</body>
+</html>

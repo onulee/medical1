@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+    <script>
+        // switch 두수와 ,( + - * /) 부호를 입력받아 두수의 결과값을 출력하시오.
+        // 1. 두수 입력
+        // 2. 사칙연산 부호를 입력
+        // 3. switch를 사용해서 결과값을 출력하시오.
+        var num1 = Number(prompt("숫자를 입력하세요."));
+        var num2 = Number(prompt("숫자를 입력하세요."));
+        var sign = prompt("+, -, *, / 중 선택하세요.");
+        var result; //defind
+        switch(sign){
+            case "+":
+                result = num1 + num2;
+                //document.write(num1+num2);
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                result = num1 / num2;
+                break;    
+        }
+
+        document.write(result);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력받기</title>
+</head>
+<body>
+    <script>
+        /* 입력형태- input, prompt */
+        //form input타입
+        var name  = prompt("당신의 이름은?","이름 공백없이...");
+        var kor = Number(prompt("국어점수를 입력하세요."));
+        var eng = Number(prompt("영어점수를 입력하세요."));
+        var math = Number(prompt("수학점수를 입력하세요."));
+
+        document.write("이름 : ",name,"<br>");
+        document.write("국어 : ",kor,"<br>");
+        document.write("영어 : ",eng,"<br>");
+        document.write("수학 : ",math,"<br>");
+        document.write("합계 : ",(kor+eng+math),"<br>");
+
+
+        /* 출력형태 */
+        //alert("출력1 알럿");
+        //console.log("출력2 콘솔");
+        //document.wrtie("출력3 document.write()")
+    </script>
+    
+</body>
+</html>

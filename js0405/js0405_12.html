@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈</title>
+    <script>
+        // 숫자 3개를 입력받아, 큰순서대로 출력하시오.
+        var num1 = 10;
+        var num2 = 7;
+        var num3 = 4;
+        var max_no = Math.max(num1,num2,num3);
+        var min_no = Math.min(num1,num2,num3);
+        var middle_no = (num1+num2+num3)-(max_no+min_no);
+        document.write("최대값 : ",max_no,"<br>");
+        document.write("최소값 : ",min_no,"<br>");
+        document.write("중간값 : ",middle_no,"<br>");
+        document.write("큰 순서대로 : ",max_no,",",middle_no,",",min_no,"<br>");
+        //var m_no = (num1>num2)?((num1>num3)?num3:num1):((num2>num3)?num3:num2);
+        //document.write("삼항식 중간값 : ",m_no,"<br>");
+
+        var arr = [8,7,4];
+        document.write(arr.sort(),"<br>");  //순차정렬
+        document.write(arr.reverse(),"<br>"); //역순정렬
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

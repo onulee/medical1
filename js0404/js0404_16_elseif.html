@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>else if</title>
+    <script>
+        function loginBtn(){
+            //alert("test");
+            var i_id = document.querySelector("#n_id");
+            var i_pw = document.querySelector("#n_pw");
+            console.log("데이터 : ",n_id.value);
+            console.log(i_id.value);
+            console.log(i_pw.value);
+            //id - aaa , pw - 1111
+            //출력 : 로그인 성공, 로그인 실패 
+            if(i_id.value=='aaa' && i_pw.value==1111){
+                document.write("로그인 성공");
+            }else{
+                alert("로그인 실패");
+            }
+
+
+            /*
+            if(i_id.value=="naver"){
+                location.href="http://www.naver.com";
+            }
+            */
+        }
+
+    </script>
+</head>
+<body>
+    <form action="#" name="frm" method="get">
+        <label>아이디</label>
+        <input type="text" name="name_id" id="n_id"><br>
+        <label>패스워드</label>
+        <input type="password" name="name_pw" id="n_pw"><br>
+        <input type="button" onclick="loginBtn()" value="로그인">
+        <input type="reset" value="취소">
+    </form>
+    
+</body>
+</html>
