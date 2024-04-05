@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>chart.js</title>
+    
+    <style>
+        * {margin:0; padding:0;}
+        section{width:800px; margin:50px auto 0;}
+        div{width:800px; height:600px; border:3px solid black;
+          margin:50px auto;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <form action="#" name="frm" method="get">
+            <label>1월</label>
+            <input type="text" name="a1" id="a1"><br>
+            <label>2월</label>
+            <input type="text" name="a2" id="a2"><br>
+            <label>3월</label>
+            <input type="text" name="a3" id="a3"><br>
+            <label>4월</label>
+            <input type="text" name="a4" id="a4"><br>
+            <label>5월</label>
+            <input type="text" name="a5" id="a5"><br>
+            <label>6월</label>
+            <input type="text" name="a6" id="a6"><br>
+        </form>
+        <br>
+        <button onclick="btn()">데이터 가져오기</button>
+        <br>
+    </section>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        var arr_account = [];
+        //버튼 함수
+        function btn(){
+            var a = document.querySelector('#a1');
+            console.log(a.value);
+            //alert(document.querySelector("#a1").value);
+            arr_account.push(document.querySelector('#a1').value);
+            arr_account.push(document.querySelector('#a2').value);
+            arr_account.push(document.querySelector('#a3').value);
+            arr_account.push(document.querySelector('#a4').value);
+            arr_account.push(document.querySelector('#a5').value);
+            arr_account.push(document.querySelector('#a6').value);
+            console.log(arr_account);
+
+            //그래프
+            const ctx = document.getElementById('myChart');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                  labels: ['1월', '2월', '3월', '4월', '5월', '6월'],
+                  datasets: [{
+                    label: '2024년 매출액(단위:백억)',
+                    data: arr_account,
+                    backgroundColor: [
+                      
+                      'rgba(255, 159, 64, 0.2)',
+                      'rgba(255, 205, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(201, 203, 207, 0.2)'
+                      ],
+                      borderColor: [
+                      
+                      'rgb(255, 159, 64)',
+                      'rgb(255, 205, 86)',
+                      'rgb(75, 192, 192)',
+                      'rgb(54, 162, 235)',
+                      'rgb(153, 102, 255)',
+                      'rgb(201, 203, 207)'
+                      ],
+                      borderWidth: 1
+                  }]
+                },
+                options: {
+                  scales: {
+                    y: {
+                      beginAtZero: true
+                    }
+                  }
+                }
+              });
+              
+        }//함수
+
+
+        
+    </script>
+</body>
+</html>

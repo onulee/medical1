@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열</title>
+    <script>
+
+
+        //010-1234-5678
+        //010-1234-****
+
+        //var in_no = "010-1234-5678";
+        while(true){
+            var in_no = prompt("전화번호를 입력하세요.(예:010-1234-4567)");
+            console.log(in_no.length);
+            if (in_no.length!=13){
+                alert("13자리 전화번호를 입력하셔야 합니다.")
+                continue;
+            }else{
+                break;
+            }
+        }
+        var tel = in_no.substring(0,9);
+        var tel2 = tel+"****";
+        document.write(tel2,"<br>");
+
+
+        /*
+        var num_str = "12345";
+        document.write(num_str.substring(0,3),"<br>");
+        document.write(num_str.charAt(2),"<br>");
+        document.write(num_str.charAt(-1),"<br>");
+        */
+
+    </script>
+    
+</head>
+<body>
+    
+    
+</body>
+</html>

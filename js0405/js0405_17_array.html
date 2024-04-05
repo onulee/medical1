@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <script>
+        var arr1 = ['홍길동','유관순','이순신','김구','강감찬','김유신','홍길자'];
+        for(var i=0;i<arr1.length;i++){
+            document.write(i," : ",arr1[i],"<br>");
+        }
+        document.write("----------------------------<br>");
+        var arr2 = arr1.slice(2,5); //슬라이싱 주소 2번부터 5번 앞까지 가져옴.
+        for(var i=0;i<arr2.length;i++){
+            document.write(i," : ",arr2[i],"<br>");
+        }
+        arr1.push('홍길순'); //맨뒤 데이터 추가
+        document.write("----------------------------<br>");
+        arr1.pop();   //맨뒤 데이터 삭제
+        arr1.shift(); //맨앞 데이터 삭제
+        arr1.splice(1,2); //index위치 데이터 개수 삭제
+
+
+        for(var i=0;i<arr1.length;i++){
+            document.write(i," : ",arr1[i],"<br>");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

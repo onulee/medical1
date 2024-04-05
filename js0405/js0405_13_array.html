@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+    <script>
+         var obj = new Object(); //객체선언 - 변수,함수
+         var arr1 = new Array();// 1. 배열생성방법
+         arr1[0] = 10;
+         document.write(arr1[0],"<br>");
+         var arr2 = new Array(1,2,3,4,5);// 2. 배열생성방법
+         var arr3 = [1,2,3,4,5]; // 3. 배열생성방법
+         var arr_name = ['홍길동','유관순','이순신','김구','강감찬'];
+         document.write(arr3[2],"<br>");
+
+        for(var i=0;i<5;i++){
+            document.write(arr3[i],"<br>");
+        }
+        document.write("-----------------<br>");
+        
+        
+        for(var a in arr3){ //key값이 넘어옴. 0,1,2,3,4
+            document.write("배열주소 : ",a,"<br>");
+            document.write("배열값 : ",arr3[a],"<br>");
+        }
+        
+        document.write(arr3);
+
+        document.write("-----------------<br>");
+        for(var a_name in arr_name){
+            document.write("주소값 : "+a_name,",<br>");
+            document.write("배열값 : "+arr_name[a_name],"<br>");
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

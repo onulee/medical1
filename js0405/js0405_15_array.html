@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+    <script>
+         //배열 10,20,30,40,50
+         // 배열추가 100,200
+         //출력하시오.
+
+        arr = [10,20,5,40,9];
+
+        document.write(arr.sort(function(a,b){
+            return a-b;
+        }),"<br>");
+
+
+
+        arr2 = [100,200]
+        arr.push(100);
+        arr.push(200);
+        for(var i=0;i<arr.length;i++){
+            document.write(arr[i],"<br>");
+        }
+
+        document.write(arr.concat(arr2),"<br>");
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

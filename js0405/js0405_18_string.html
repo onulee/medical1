@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열</title>
+    <script>
+        var str1 = "안녕하세요. 오늘은 4월 5일 금요일입니다. 주말 잘 보내세요.";
+        document.write("length 문자열 길이 : ",str1.length,"<br>"); //문자열 길이
+        str1.charAt(2)  //1개의 문자 가져옴.
+        document.write("charAt : ",str1.charAt(2),"<br>")
+        str1.indexOf('오늘'); // 문자열이 있는지 확인
+        document.write("indexOf 문자열 확인 : ",str1.indexOf('오늘'),"<br>");
+        document.write("indexOf 문자열 확인 : ",str1.indexOf('hello'),"<br>"); //없을때 -1
+        str1.match('금요일'); // 문자열이 있는지 확인
+        document.write("match 문자열 확인 : ",str1.match('금요일'),"<br>");
+        document.write("search 문자열 확인 : ",str1.search('금요일'),"<br>"); //문자열 있는 위치 리턴
+        document.write("search 문자열 확인 : ",str1.search('good'),"<br>"); //없을때 -1 
+        str1.substring(2,5);
+        document.write("substring 문자열 확인 : ",str1.substring(2,5),"<br>"); // 문자열을 가져옴. 
+        document.write("replace 문자열 확인 : ",str1.replace("안녕하세요.","반가워요"),"<br>"); // 문자열 대체 
+        document.write("replace 문자열 확인 : ",str1.replaceAll(" ",""),"<br>"); // 전체 문자열 대체
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+    <script>
+         var arr1 = [1,2,3,4,5];
+         var stu = [1,'홍길동',100,100,100,300,100.0,1];
+         var arr2 = ['홍길동','유관순','이순신'];
+         var arr3 = ["김구","강감찬"];
+         arr1.push(6); //배열요소 맨뒤 추가
+         arr1.push(7);
+         arr1.push(8);
+         arr1.pop();  //배열요소 마지막 삭제
+
+         var result = stu.join(","); //배열을 문자열로 변환
+         document.write(result,"<br>");
+
+         var result2 = arr2.concat(arr3); //배열2개를 1개의 배열로 합침.
+         document.write(result2,"<br>");
+
+         var result3 = arr1.slice(1,3); //배열의 일부분을 가져옴.
+         document.write(result3,"<br>");
+
+
+         for(var i=0;i<arr1.length;i++){
+            document.write(arr1[i],"<br>");
+         }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
