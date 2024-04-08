@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <style>
+        * {margin:0; padding:0;}
+        div{width:400px; height: 200px; margin:50px auto; }
+        button{width:150px; height:40px; display: block; margin:0 auto; }
+        h2{font-size:40px; text-align: center; border:3px solid black;}
+    </style>
+    <script>
+        //setInterval ( 시간간격별로 일정하게 실행함수, 밀리세컨드초 )
+        var num = 0;
+        
+        function auto_plus(){
+            auto1 = setInterval(add_num,1000);
+        }  
+        
+        add_num = function (){
+            num++;
+            document.querySelector(".title").innerText = num;
+            console.log("num : "+num);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h2 class="title">0</h2>
+        <br>
+        <button onclick="auto_plus()">더하기(+)</button>
+        <button onclick="clearInterval(auto1)">STOP</button>
+       
+
+
+    </div>
+   
+    
+</body>
+</html>

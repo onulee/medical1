@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <style>
+        * {margin:0; padding:0;}
+        div{width:400px; height: 200px; margin:50px auto; }
+        button{width:150px; height:40px; display: block; margin:0 auto; }
+        h2{font-size:40px; text-align: center; border:3px solid black;}
+    </style>
+    <script>
+        var addNum=0;
+        function auto_plus(){
+            auto1 = setInterval(add_num,1000);
+        }
+        add_num = function(){
+            //숫자
+            //addNum++;
+
+            //시간
+            var today = new Date();
+            var nowHour = today.getHours();
+            nowHour = String(nowHour).padStart(2,"0");
+            var nowMinute = today.getMinutes();
+            nowMinute = String(nowMinute).padStart(2,"0");
+            var nowSecond = today.getSeconds();
+            nowSecond = String(nowSecond).padStart(2,"0");
+            var auto_time = nowHour+" : "+nowMinute+" : "+nowSecond
+            document.querySelector(".title").innerText = auto_time;
+        }
+        function stop(){
+            clearInterval(auto1);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h2 class="title">00:00:00</h2>
+        <br>
+        <button onclick="auto_plus()">시계START</button>
+        <button onclick="stop()">시간멈춤</button>
+    </div>
+   
+    
+</body>
+</html>

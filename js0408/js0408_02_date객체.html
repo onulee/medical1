@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 정보</title>
+    <style>
+        * {margin:0; padding:0;}
+    </style>
+    <script>
+        var today = new Date(); //현재날짜객체
+        var nowYear = today.getFullYear();
+        var nowMonth = today.getMonth();
+        var nowDate = today.getDate();
+        var nowDay = today.getDay();
+        var nowHour = today.getHours();
+        var nowMinute = today.getMinutes();
+        var nowSecond = today.getSeconds();
+        document.write(nowYear,"년 ",nowMonth,"월 ",nowDate,"일 ",nowDay,"요일<br>");
+        document.write(nowHour,"시 ",nowMinute,"분 ",nowSecond,"초 <br>");
+        
+        // 4월 8일 월요일입니다.
+        var f_day; 
+        switch(nowDay){
+            case 0: f_day="일요일";break;
+            case 1: f_day="월요일";break;
+            case 2: f_day="화요일";break;
+            case 3: f_day="수요일";break;
+            case 4: f_day="목요일";break;
+            case 5: f_day="금요일";break;
+            case 6: f_day="토요일";break;
+        }
+        document.write(nowYear,"년 ",nowMonth+1,"월 ",nowDate,"일 ",f_day,"<br>");
+
+        var d_day = new Date(2024,11,31);  //특정날짜확인
+        var nowYear2 = d_day.getFullYear();
+        var nowMonth2 = d_day.getMonth();
+        var nowDate2 = d_day.getDate();
+        var nowDay2 = d_day.getDay();
+        var f_day2; 
+        switch(nowDay){
+            case 0: f_day2="일요일";break;
+            case 1: f_day2="월요일";break;
+            case 2: f_day2="화요일";break;
+            case 3: f_day2="수요일";break;
+            case 4: f_day2="목요일";break;
+            case 5: f_day2="금요일";break;
+            case 6: f_day2="토요일";break;
+        }
+        document.write(nowYear2,"년 ",nowMonth2+1,"월 ",nowDate2,"일 ",f_day2,"<br>");
+
+        //두 날짜간의 차이 1/1000초 시간으로 날짜를 환산해서 리턴
+        // 두 날짜간의 일 간격 확인
+        var diffDate = d_day.getTime() - today.getTime();
+        document.write(d_day.getTime(),"<br>");
+        document.write(today.getTime(),"<br>");
+
+        var result = Math.ceil(diffDate/(1000*60*60*24));
+        document.write("현재 남은 일자 : ",result,"일 <br>");
+
+    </script>
+</head>
+<body>
+    
+    
+</body>
+</html>

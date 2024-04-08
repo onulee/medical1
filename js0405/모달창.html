@@ -26,12 +26,24 @@
         }
         .btn{width:150px; height:40px; font-size:20px; text-align: center;}
     </style>
+    <script>
+        function open_pop(){
+            var open_modal = document.querySelector(".modal");
+            open_modal.style.display = "flex";
+        }
+
+        function close_pop(){
+            var close_modal = document.querySelector(".modal");
+            close_modal.style.display = "none";
+        }
+
+    </script>
 </head>
 <body>
-    <button class="btn">팝업창 열기</button>
+    <button class="btn" onclick="open_pop()">팝업창 열기</button>
     <section>
         <div class="modal">
-            <div class="modal_pop">
+            <div class="modal_pop" onclick="close_pop()">
                 <h2>공지사항</h2>
                 <p>새로운 홈페이지 오픈</p>
             </div>

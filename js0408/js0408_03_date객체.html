@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 정보</title>
+    <style>
+        * {margin:0; padding:0;}
+    </style>
+    <script>
+        var today = new Date();
+        var d_day = new Date(2024,9,31);
+
+        var diffDate = d_day.getTime() - today.getTime();
+
+        document.write("<h2>10월 31일까지 남은 일시분초</h2>")
+        document.write("현재 밀리세컨드 차이 : ",diffDate,"<br>");
+        
+        // 1000초 * 60초 * 60분 * 24시간
+        
+        // 일자 확인 방법
+        var date_result = Math.floor(diffDate/(1000*60*60*24));
+        var remain_date = diffDate%(1000*60*60*24);
+        document.write("일자 : ",date_result,"<br>");
+        document.write("현재 남은 나머지 일자 : ",remain_date,"<br>");
+
+        //---------------------------------------
+        // 시간 확인 방법
+
+        var hour_result = Math.floor(remain_date/(1000*60*60));
+        var remain_hour = remain_date%(1000*60*60);
+        document.write("시간 : ",hour_result,"<br>");
+        document.write("현재 남은 나머지 시간 : ",remain_hour,"<br>");
+
+        //---------------------------------------
+        // 분 확인 방법
+
+        var minute_result = Math.floor(remain_hour/(1000*60));
+        var remain_minute = remain_hour%(1000*60);
+        document.write("분 : ",minute_result,"<br>");
+        document.write("현재 남은 나머지 분 : ",remain_minute,"<br>");
+
+        //---------------------------------------
+        // 초 확인 방법
+
+        var second_result = Math.floor(remain_minute/(1000));
+        var remain_second = remain_minute%(1000);
+        document.write("분 : ",second_result,"<br>");
+        document.write("현재 남은 나머지 분 : ",remain_second,"<br>");
+
+
+
+
+        // 현재날짜까지 몇일( 몇시간 몇분 몇초가 )남았는지 출력하시오.
+
+
+    </script>
+</head>
+<body>
+    
+    
+</body>
+</html>

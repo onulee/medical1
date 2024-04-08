@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <style>
+        * {margin:0; padding:0;}
+        div{width:700px; height: 200px; margin:50px auto; }
+        button{width:150px; height:40px; display: block; margin:0 auto; }
+        h2{font-size:40px; text-align: center; border:3px solid black;}
+    </style>
+    <script>
+        function auto_plus(){
+            auto1 = setInterval(clock_count,1000);
+        }
+        
+        function clock_count(){
+            var today = new Date();
+            var d_day = new Date(2024,9,31,23,59,59);
+            
+            // 시간차이
+            var diffDate = d_day.getTime() - today.getTime();
+            // 1000초 * 60초 * 60분 * 24시간
+            // 일자 확인 방법
+            var date_result = Math.floor(diffDate/(1000*60*60*24));
+            var remain_date = diffDate%(1000*60*60*24);
+            //document.write("일자 : ",date_result,"<br>");
+            //document.write("현재 남은 나머지 일자 : ",remain_date,"<br>");
+            //---------------------------------------
+            // 시간 확인 방법
+            var hour_result = Math.floor(remain_date/(1000*60*60));
+            var remain_hour = remain_date%(1000*60*60);
+            //document.write("시간 : ",hour_result,"<br>");
+            //document.write("현재 남은 나머지 시간 : ",remain_hour,"<br>");
+            //---------------------------------------
+            // 분 확인 방법
+            var minute_result = Math.floor(remain_hour/(1000*60));
+            var remain_minute = remain_hour%(1000*60);
+            //document.write("분 : ",minute_result,"<br>");
+            //document.write("현재 남은 나머지 분 : ",remain_minute,"<br>");
+            //---------------------------------------
+            // 초 확인 방법
+            var second_result = Math.floor(remain_minute/(1000));
+            var remain_second = remain_minute%(1000);
+            //document.write("분 : ",second_result,"<br>");
+            //document.write("현재 남은 나머지 분 : ",remain_second,"<br>");
+
+            // 시분초 포맷
+            nowHour = String(hour_result).padStart(2,"0");
+            var nowMinute = today.getMinutes();
+            nowMinute = String(minute_result).padStart(2,"0");
+            var nowSecond = today.getSeconds();
+            nowSecond = String(second_result).padStart(2,"0");
+            var auto_time = nowHour+" : "+nowMinute+" : "+nowSecond
+
+            document.querySelector(".title1").innerText = date_result+"일";
+            document.querySelector(".title2").innerText = auto_time;
+        }
+
+        function clock_close(){
+            clearInterval(auto1);
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <h2>[ 10월 31일까지 남은 일자 및 시간 ]</h2>
+        <h2 class="title1">0일</h2>
+        <h2 class="title2">00:00:00</h2>
+        <br>
+        <button onclick="auto_plus()">시계START</button>
+        <button onclick="clock_close()">시간멈춤</button>
+    </div>
+   
+    
+</body>
+</html>
