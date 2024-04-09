@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr_result = [];
+        // 두수를 입력받아, 사칙연산을 해서 리턴 받은후 출력하시오.
+        var num1 = Number(prompt("숫자를 입력하세요."));
+        var num2 = Number(prompt("숫자를 입력하세요."));
+        result(num1,num2);
+
+        document.write("사칙연산 결과 : ",arr_result,"<br>");
+
+        // 리턴이 없는 경우
+        function result(num1,num2){
+            result1 = num1 + num2;
+            result2 = num1 - num2;
+            result3 = num1 * num2;
+            result4 = num1 / num2;
+            arr_result.push(result1);
+            arr_result.push(result2);
+            arr_result.push(result3);
+            arr_result.push(result4);
+        }
+        //리턴이 있는 경우
+        /*
+        function result(num1,num2){
+            result1 = num1 + num2;
+            result2 = num1 - num2;
+            result3 = num1 * num2;
+            result4 = num1 / num2;
+            var arr_result = [result1,result2,result3,result4];
+            return arr_result;
+        }
+        */
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>return</title>
+    <script>
+        let arr_result = [];
+
+        function result(num1,num2){
+            let n_total = num1+num2;
+            let n_avg = (num1+num2)/2;
+            arr_result.push(n_total);
+            arr_result.push(n_avg);
+        }
+
+        num1 = Number(prompt("국어점수를 입력하세요."));
+        num2 = Number(prompt("영어점수를 입력하세요."));
+
+        result(num1,num2);
+
+        document.write("결과값 : ",arr_result,"<br>");
+
+    </script>
+</head>
+<body>
+    <button>평균구하기</button>
+    
+</body>
+</html>

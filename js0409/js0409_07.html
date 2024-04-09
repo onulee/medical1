@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <script>
+        //             저체중,정상,비만전단계,1단계비만,2단계비만,3단계비만
+        let arr_type = [18.5,23,25,30,35,35.1]
+
+        function bmiBtn(){
+            let weight = document.querySelector("#weight").value;
+            let height = document.querySelector("#height").value;
+            console.log("몸무게 : ",weight);
+            console.log("키 : ",height);
+
+            let bmi = Math.round((weight / (height * height)*10))/10;
+            
+            console.log("bmi : ",bmi);
+
+            let result_title = "";
+            
+            //비만 단계 비교 구문 넣기
+            if(bmi>=35) result_title = "3단계 비만";
+            else if(bmi>=30) result_title = "2단계 비만";
+            else if(bmi>=25) result_title = "1단계 비만";
+            else if(bmi>=23) result_title = "비만전단계";
+            else if(bmi>=18.5) result_title = "정상";
+            else{ result_title="저체중";}
+
+            //표준체중 계산방법  - 남성: 키(m) × 키(m) × 22 , 여성: 키(m) × 키(m) × 21
+            let result_kg = 0;
+            //console.log(document.querySelectorAll("input[type='radio']")); //여러 개를 찾아줌.
+            let gen = document.querySelector("input[type='radio']:checked").value;
+
+            if(gen=="남성") result_kg = height*height*22;
+            else result_kg = height*height*21; 
+
+            let result = "당신의 신체질량지수(BMI)는 "+bmi+" (으)로 "+ result_title  +"입니다.<br> 평균체중 "+result_kg+" kg 입니다. ";
+            document.querySelector("#main").innerHTML = result;
+        }
+        
+
+    </script>
+    <style>
+        div{width:600px; height:100px; border:2px solid black; text-align: center;
+        font-size: 20px; font-weight: 700;}
+    </style>
+</head>
+<body>
+    <h2>신체질량지수(BMI) 계산</h2>
+    <P>자신의 성별, 신장, 체중을 입력한 후 계산하기를 눌러 결과를 확인하세요.</P>
+    <h3>결과보기</h3>
+    <div id="main">
+        
+    </div>
+    <form action="#" name="frm" method="get">
+        <label>성별</label>
+        <input type="radio" name="gender" id="male" value="남성">
+        <label for="male">남성</label>
+        <input type="radio" name="gender" id="female" value="여성">
+        <label for="female">여성</label>
+        <br>
+        <label>신장</label>
+        <input type="text" name="height" id="height">
+        <label>M</label>
+        <br>
+        <label>체중</label>
+        <input type="text" name="weight" id="weight">
+        <label>KG</label>
+        <br>
+        <button type="button" onclick="bmiBtn()">계산하기</button>
+    </form>
+    
+</body>
+</html>

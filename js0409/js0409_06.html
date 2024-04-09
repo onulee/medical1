@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <script>
+        let arr_stock = [0,5,10,40]; //재고
+
+        function checkBtn(){
+            var number = document.querySelector("#product").value;
+            console.log(number); //
+            document.querySelector("#ea").value = arr_stock[number];
+        }
+        
+
+
+    </script>
+</head>
+<body>
+    <select id="product" onchange="checkBtn()" >
+        <option value="0">옵션선택</option>
+        <option value="1">신발</option>
+        <option value="2">가방</option>
+        <option value="3">지갑</option>
+    </select>
+    <br>
+    <label>재고 개수</label>
+    <input type="text" name="ea" id="ea"><label>개</label>
+    <button>확인</button>
+    
+</body>
+</html>

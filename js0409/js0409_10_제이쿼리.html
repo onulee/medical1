@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>제이쿼리</title>
+    <script>
+        //제이쿼리 선언문
+        /*
+        $(document).ready(function(){
+            $("#txt").text('반갑습니다.');
+        });
+        */
+
+        //제이쿼리 축약
+        $(function(){
+            $("#txt").text('반갑습니다.');
+        });
+
+        //제이쿼리 선택자
+        /*
+          $("#아이디") - 아이디 선택자
+          $(".클래스") - 클래스 선택자
+          $("태그") - 태그 선택자
+        */
+
+        
+
+    </script>
+</head>
+<body>
+    <div id="txt">안녕하세요.</div>
+
+    <script>
+        //document.querySelector("#txt").innerText = "반갑습니다.";
+    </script>
+    
+</body>
+</html>
