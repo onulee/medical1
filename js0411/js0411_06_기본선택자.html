@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>선택자</title>
+    <script>
+        $(function(){
+            console.log($("h1").text());
+            console.log($("h1").parent().text()); //상위부모 요소 선택
+            console.log($("h1").parents());  //모든 부모 요소 선택
+            console.log($("#in_wrap").text());
+
+            console.log("------------------");
+            console.log("closest 선택자 : "+$("#a01").closest("div").html());
+            console.log("parent 선택자 : "+$("#a01").parent().html());
+        });//jquery
+    </script>
+
+</head>
+<body>
+    <div id="top">
+        <section>
+            <div id="main">
+                <ul>
+                    <li id="a01">다음</li>
+                    <li>네이버</li>
+                    <li>구글</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+
+
+    <div id="wrap">         <!-- 조상요소 -->
+        <div id="in_wrap">  <!-- 부모요소 -->
+            <h1>제목1</h1>   <!-- 자식요소 -->
+            <h2>제목2</h2>   <!-- 형제요소 -->
+            <p>내용1</p>
+            <p>내용2</p>
+            <p>내용3</p>
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>

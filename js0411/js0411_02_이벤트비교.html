@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>제이쿼리</title>
+    
+    <script>
+        //제이쿼리 선언문
+        $(function(){
+            
+        });//query
+        
+    </script>
+    <style>
+        *{margin:0; padding:0;}
+        div{width:500px; height:200px; border:3px solid black; 
+            background:yellow; font-size:25px; text-align: center;
+            overflow: auto; /* 자동스크롤 */
+
+        }
+    </style>
+
+</head>
+<body>
+    <div id="main"></div>
+    <input type="text" name="txt" id="txt" >
+    <button id="dBtn">확인</button>
+
+    <script>
+        //자바스크립트 이벤트 생성방법
+        /*
+        document.querySelector("#txt").addEventListener('keyup',function(){
+            if(window.event.keyCode == 13){
+                $("#main").append( "운이조아 : "+$("#txt").val()+"<br>" ); //input의 글자를 div에 넣어줌.
+                $("#txt").val(""); //input의 글자를 지워줌.
+            }
+        });
+        */
+
+        //제이쿼리 선언
+        $(function(){
+
+            //제이쿼리 이벤트생성
+            $("#txt").keyup(function(){
+                if(window.event.keyCode == 13){
+                    $("#main").append( "운이조아 : "+$("#txt").val()+"<br>" ); //input의 글자를 div에 넣어줌.
+                    $("#txt").val(""); //input의 글자를 지워줌.
+                }
+            })
+
+        });
+    </script>
+    
+</body>
+</html>

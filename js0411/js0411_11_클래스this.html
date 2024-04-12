@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+
+            $(".cc").click(function(){
+               console.log("현재 클릭한 클래스 : "+$(this).text()); //$(this) : 클릭한 해당요소
+            });
+            /*
+            $("#cbtn").click(function(){
+                alert("test");
+                console.log($(".cc"));  //3개
+            });
+            */
+        });//jquery
+    </script>
+    <style>
+        div{width:150px; height: 20px; border:1px solid black; }
+    </style>
+
+</head>
+<body>
+
+    <div class="cc">1</div>
+    <div class="cc">2</div>
+    <div class="cc">3</div>
+    <button id="cbtn">확인</button>
+    
+</body>
+</html>

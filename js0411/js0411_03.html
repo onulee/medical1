@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+    </style>
+    <script>
+        $(function(){
+           //1. 선택자 지정
+           $("#nbtn1").click( function(){
+              //alert("test");
+              /*
+              $(".n1").css('background','yellow'); //1개 css사용
+              $(".n1").css('color','blue');
+              $(".n1").css('font-weight','700');
+              */
+              // 여러개 ({ });
+              $(".n1").css({'background':'yellow','color':'blue','font-weight':'700'});
+            });
+            
+            $("#nbtn2").click( function(){
+               $(".n2").css({'background':'yellow','color':'blue','font-weight':'700'});
+            }); 
+            $("#nbtn3").click( function(){
+               $(".n3").css({'background':'yellow','color':'blue','font-weight':'700'});
+            }); 
+
+           //blue, green
+
+        });
+    </script>
+</head>
+<body>
+    <input type="text" name="n1" class="n1" value="네이버" readonly>
+    <button id="nbtn1">체크</button>
+    <br>
+    <input type="text" name="n1" class="n2" value="다음" readonly>
+    <button id="nbtn2">체크</button>
+    <br>
+    <input type="text" name="n1" class="n3" value="구글" readonly>
+    <button id="nbtn3">체크</button>
+    <br>
+    
+</body>
+</html>

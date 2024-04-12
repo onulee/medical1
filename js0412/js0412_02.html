@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        .p_main{width:600px; height:450px; border:1px solid #ddd;}
+        .p_main h2{text-align: center; font-size: 40px; color:#333; font-weight: 700;; margin:40px 0;}
+        .p_main table{width:600px;  border-collapse: collapse;}
+        .p_main table,th,td{font-size:20px; color:#666; text-align: left;}
+        .p_main th { padding-left: 50px; }
+        .p_main td{height:50px; }
+        .p_main input[type='text']{width:400px; height:40px; padding-left:20px; box-sizing: border-box;
+        border:1px solid #ddd; font-size:20px; }
+        .p_main button{width:140px; height:40px; background:#96694c; color:white; font-weight: 700;
+        font-size:18px; border:0;}
+        #in_btn{text-align: center; height:100px;}
+
+    </style>
+</head>
+<body>
+    <div class="p_main">
+        <h2>학생성적입력</h2>
+        <form action="#" name="frm" method="get">
+            <table>
+                <colgroup>
+                    <col width="150px">
+                    <col width="400px">
+                </colgroup>
+                <tr>
+                    <th>이름</th>
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <th>국어점수</th>
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <th>영어점수</th>
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <th>수학점수</th>
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <td id="in_btn" colspan="2">
+                        <button type="button" id="confirmBtn">확인</button>
+                        <button type="button" id="cancelBtn">취소</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+
+    </div>
+    
+</body>
+</html>

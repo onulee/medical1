@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>제이쿼리</title>
+    <style>
+        *{margin:0; padding:0;}
+        div{width:500px; height:200px; border:3px solid black; 
+            background:yellow; font-size:25px; text-align: center;
+            overflow: auto; /* 자동스크롤 */
+        }
+    </style>
+    <script>
+        //제이쿼리 선언문
+        $(function(){
+            //제이쿼리 이벤트호출
+            $("#txt").keyup(function(){
+                if(window.event.keyCode == 13){
+                    console.log("enter키 누름");
+                    $("#main").append( "운이조아 : "+$("#txt").val()+"<br>" ); //input의 글자를 div에 넣어줌.
+                    $("#txt").val(""); //input의 글자를 지워줌.
+                }
+            });
+            
+            
+        });//query
+        
+        //자바스크립트 함수 선언
+        function dBtn(){
+            //자바스크립트 선택자활용
+            //document.querySelector("#main").style.background = "blue";
+            //document.getElementById("main").style.background = "blue";
+
+            //제이쿼리 선택자활용
+            //$("#main").css("background","blue");
+
+            // 자바스크립트 input 내용 - value, 태그에 글자 innerText
+            // 제이쿼리 input 내용 val(), 태그에 글자 text()
+
+            // keyCode - 13은 enter키
+            // 자바스크립트 내 함수 실행
+            if(window.event.keyCode == 13){
+                console.log("enter키 누름");
+                $("#main").append( "운이조아 : "+$("#txt").val()+"<br>" ); //input의 글자를 div에 넣어줌.
+                $("#txt").val(""); //input의 글자를 지워줌.
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    <div id="main"></div>
+    <input type="text" name="txt" id="txt">
+    <button>확인</button>
+    
+</body>
+</html>

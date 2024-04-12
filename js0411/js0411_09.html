@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        section{width:1200px; margin:50px auto;}
+        h2{text-align: center;}
+        table{border-collapse: collapse; width:1200px;}
+        table,th,td{border:1px solid black; text-align: center;}
+        th{height:45px; background: #efefef;}
+        td{height:40px; }
+    </style>
+    <script>
+        $(function(){
+            
+            
+            let hdata = "";
+            for(let i=1;i<=20;i++){
+                hdata += "<tr id='"+i+"'>";
+                hdata += "<td>"+i+"</td><td>사용일시 중단 안내</td>";    
+                hdata += "<td>2024-03-21</td><td><button class='cBtn'>삭제</button></td>";    
+                hdata += "</tr>";
+
+            }
+
+            $("tbody").html(hdata);
+
+
+            $(".cBtn").click(function(){
+                let del_id = $(".cBtn").parent().parent().attr("id");
+                if(confirm("정말 삭제하시겠습니까?"))
+                    console.log("id : "+del_id);
+                    $("#"+del_id).remove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <section>
+        <h2>고객행복센터</h2>
+        <table>
+            <colgroup>
+                <col width="15%">
+                <col width="*">
+                <col width="15%">
+                <col width="15%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>등록일</th>
+                    <th>삭제</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        <button id="addBtn">게시물 추가</button>
+    </section>
+    </body>
+</html>
