@@ -1,4 +1,6 @@
 $(function(){
+
+// 최초실행 --------------------------------    
     let no = [1,2,3,4,5,6,7,8,9,10];
     let name = ['홍길동','유관순','이순신','김구','강감찬','김유신','홍길순','홍길자','최현묵','이규원'];
     let kor = [62,90,64,76,51,89,77,55,73,53];
@@ -27,6 +29,19 @@ $(function(){
     // html소스를 tbody 추가
     $("#body").html(htmlData);
 
+// 최초실행 -------------------------------- 
+
+    //학생입력버튼 클릭
+    $("#writeBtn").click(function(){
+        $(".p_all").css("display","block");
+    });
+
+    $("#cancelBtn").click(function(){
+        $(".p_all").css("display","none");
+    })
+
+
+
 
     //학생입력확인 버튼
     $("#confirmBtn").click(function(){
@@ -34,11 +49,21 @@ $(function(){
         //console.log(Math.max.apply(null,no)+1); //배열에서 최대값 구하기
         //no.push(Math.max.apply(null,no)+1); //배열추가
         console.log("이름 : "+$("#name").val());
+        
+        //공백확인
+        if($("#name").val().length<2){
+            alert("이름을 입력하셔야 등록이 가능합니다.");
+            $("#name").focus();
+            return false;
+        }
+        
+        //번호생성은 DB에서 자동으로 부여
         let i_no = Math.max.apply(null,no)+1;
-        let i_name = $("#name").val();
-        let i_kor = $("#kor").val();
-        let i_eng = $("#eng").val();
-        let i_math = $("#math").val();
+        no.push(i_no);
+        let i_name = $("#name").val(); //String
+        let i_kor = Number($("#kor").val());
+        let i_eng = Number($("#eng").val());
+        let i_math = Number($("#math").val());
         let i_total = i_kor+i_eng+i_math;
         let i_avg = (i_total/3).toFixed(2); //소수점2자리 반올림
 
@@ -58,15 +83,18 @@ $(function(){
         htmlData += "</tr>";
 
         // html소스를 tbody 추가
-        $("#body").html(htmlData);
-
-
-
-
+        //$("#body").html(htmlData); //기존html에 덮어쓰기
+        $("#body").prepend(htmlData); //기존html 위쪽에 추가
+        //$("#body").append(htmlData); //기존html 뒤쪽에 추가
+        
+        //input 초기화
+        $("#name").val("");
+        $("#kor").val("");
+        $("#eng").val("");
+        $("#math").val("");
+        $(".p_all").css("display","none");
         
     });//학생입력버튼
-
-
 
 
     //전체선택,취소
