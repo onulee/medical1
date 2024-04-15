@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        #main{width:300px; height:200px; margin:50px auto; border:3px solid black;
+        font-size: 20px; text-align: center;}
+        #mbtn{display: block; width:120px; height:30px; margin:20px auto; }
+    </style>
+    <script>
+        //mouseover num1,num2 합계가 main 나타나고, mouseout 사라지게 실행
+        $(function(){
+        
+            $("#mbtn").on({
+                "mouseover focus":function(){
+                    console.log($("#num1").val());
+                    console.log($("#num2").val());
+                    let sum = Number($("#num1").val())+Number($("#num2").val());
+                    $("#main").text(sum);
+
+                },
+                "mouseout blur":function(){
+                    $("#main").text("");
+                    //$("#main").val(""); html,prepend,append
+
+                }
+            })
+        });
+    </script>
+    
+</head>
+<body>
+    <div id="main">0</div>
+    <input type="text" name="num1" id="num1">+<input type="text" name="num2" id="num2">
+    <br>
+    <button id="mbtn">확인</button>
+
+
+    
+</body>
+</html>

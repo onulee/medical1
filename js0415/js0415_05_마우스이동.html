@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $(document).on("mousemove",function(e){
+                $(".mX").text(e.pageX); //마우스의 x좌표
+                $(".mY").text(e.pageY); //마우스의 y좌표
+            });
+
+        });
+    </script>
+    <style>
+        *{margin:0; padding:0;}
+        h1{text-align: center;}
+        div{width:200px; height:100px; margin:50px auto; border:3px solid black;
+        font-size: 20px; text-align: center;}
+    </style>
+
+</head>
+<body>
+    <h1>mousemove-마우스이동</h1>
+    <div>
+        <p>X:<span class="mX">0</span></p>
+        <p>Y:<span class="mY">0</span></p>
+    </div>
+    
+</body>
+</html>

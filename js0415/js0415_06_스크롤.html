@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $(window).on("scroll",function(){
+                $(".top").text($(this).scrollTop());
+                $(".left").text($(this).scrollLeft());
+            });
+        });
+    </script>
+    <style>
+        *{margin:0; padding:0;}
+        body{width:3000px; height:3000px;}
+        #main{width:600px; height:3000px; border:3px solid black;}
+        #title{position: fixed; top:30px; left: 650px; border:1px solid black;
+        width:200px; height:200px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div id="title">
+        <p>scrollTop:<span class="top">0</span></p>
+        <p>scrollleft:<span class="left">0</span></p>
+    </div>
+    <div id="main"></div>
+
+    
+</body>
+</html>

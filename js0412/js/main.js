@@ -44,7 +44,7 @@ $(function(){
 
 
     //학생입력확인 버튼
-    $("#confirmBtn").click(function(){
+    $("#confirmBtn").on("click",function(){
         // 글자-text() innerText, input-val() value, html() innerHtml
         //console.log(Math.max.apply(null,no)+1); //배열에서 최대값 구하기
         //no.push(Math.max.apply(null,no)+1); //배열추가
@@ -84,8 +84,8 @@ $(function(){
 
         // html소스를 tbody 추가
         //$("#body").html(htmlData); //기존html에 덮어쓰기
-        $("#body").prepend(htmlData); //기존html 위쪽에 추가
-        //$("#body").append(htmlData); //기존html 뒤쪽에 추가
+        //$("#body").prepend(htmlData); //기존html 위쪽에 추가
+        $("#body").append(htmlData); //기존html 뒤쪽에 추가
         
         //input 초기화
         $("#name").val("");
@@ -112,12 +112,20 @@ $(function(){
 
 
     //table에 있는 삭제버튼 클릭
-    $(".delBtn").click(function(){
+    $(document).on("click",".delBtn",function(){
         console.log("현재 선택된 class id : "+$(this).parent().parent().attr("id"));
         if(confirm("정말 삭제하시겠습니까?")){
             $("#"+$(this).parent().parent().attr("id")).remove();
         }
     });//table삭제
+
+    // 동적으로 할당될 경우 실행이 안됨.
+    // $(".delBtn").on("click",function(){
+    //     console.log("현재 선택된 class id : "+$(this).parent().parent().attr("id"));
+    //     if(confirm("정말 삭제하시겠습니까?")){
+    //         $("#"+$(this).parent().parent().attr("id")).remove();
+    //     }
+    // });//table삭제
 
     //하단 삭제버튼 클릭
     $("#deleteBtn").click(function(){

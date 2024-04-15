@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        #main{width:300px; height:200px; margin:50px auto; border:3px solid black;}
+        #mbtn{display: block; width:120px; height:30px; margin:20px auto; }
+    </style>
+    <script>
+        $(function(){
+            //css, attr,prop
+            /*
+            $("#mbtn").click(function(){
+                //alert("test");
+                $("#main").css("background","yellow");
+            });
+            */
+            $("#mbtn").on("click",function(){
+                $("#main").css("background","yellow");
+            });
+
+            //버튼2
+            /*
+            $("#mbtn2").on("mouseover focus",function(){
+                $("#main").css("background","yellow");
+            });
+            */
+            $("#mbtn2").on({
+                "mouseover focus":function(){
+                    $("#main").css("background","yellow");
+                },
+                "mouseout blur":function(){
+                    $("#main").css("background","white");
+                }
+            });
+
+
+        });
+    </script>
+    
+</head>
+<body>
+    <div id="main"></div>
+    <button id="mbtn">확인</button>
+    <button id="mbtn2">버튼2</button>
+    
+</body>
+</html>

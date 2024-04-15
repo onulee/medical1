@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        #content{width:800px; height:700px; border:1px solid black;}
+    </style>
+    <script>
+        $(function(){
+            $("#sbtn").click(function(){
+                $.ajax({
+                    url:"http://127.0.0.1:5500/js0415/json/stu_score.json",     //연결주소
+                    type:"get", //get,post
+                    data:{},    //요청 할 데이터 - 없으면 안넣어도 됨.
+                    dataType:"json", //요청한 데이터 - html,xml,json,text
+                    success:function(data){
+                        alert("성공");
+                        console.log(data);
+                    },
+                    error:function(){
+                        alert("ajax 실패");
+                    }
+
+                });//ajax
+
+            })
+
+        });//jquery
+    </script>
+</head>
+<body>
+    <h2>학생성적 프로그램</h2>
+    <button id="sbtn">확인</button>
+    <div id="content"></div>
+    
+</body>
+</html>

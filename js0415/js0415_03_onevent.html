@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            //라디오 버튼이 클릭된 사이트의 배경색을 노란색으로 변경
+            $("input[name='site']").click(function(){ //3개
+                console.log($("input[name='site']"));
+                //선택된 것.
+                $("input[name='site']").each(function(){
+                   if($(this).is(":checked")){
+                        alert($(this).val());
+                        $("."+$(this).val()).css("background","yellow");
+                        //$(".naver").css("background","yellow");
+                   }
+                });
+
+            });
+
+        });
+    </script>
+    <style>
+        *{margin:0; padding:0;}
+        h2,form{text-align: center;}
+        .main{width:800px; height:300px; margin:50px auto; border:3px solid black;
+        font-size: 20px; text-align: center;}
+    </style>
+</head>
+<body>
+    <h2>원하는 사이트를 클릭하세요.</h2>
+    <form>
+        <input type="radio" name="site" id="naver" value="naver">
+        <label for="naver">네이버</label>
+        <input type="radio" name="site" id="daum" value="daum">
+        <label for="daum">다음</label>
+        <input type="radio" name="site" id="google" value="google">
+        <label for="google">구글</label>
+    </form>
+    <div class="main naver">네이버(영어: NAVER)는 1999년 6월에 출시된 대한민국의 포털사이트이다. 또한 네이버는 1997년 2월 26일 이해진, 권혁일, 김보경, 구창진, 오승환, 최재영, 강석호 등으로 구성된 삼성SDS의 사내 벤처에서 '웹글라이더'라는 이름으로 시작해서 1998년 1월에 분리된 네이버컴 주식회사에서 운영하다가 2000년 자회사인 한게임과 합병하여 NHN이 된 후 재분리하여 현재는 네이버(주)에서 운영하고 있다.</div>
+    <div class="main daum">다음(영어: Daum)은 대한민국의 포털 사이트이다. "한메일"(현재의 다음 메일)이라는 이름으로 대한민국 최초의 웹 메일 서비스를 열었으며, 이 밖에도 온라인 커뮤니티 서비스 "다음 카페", 뉴스 서비스 "다음 뉴스" 등을 서비스하고 있다. 운영 업체는 본래 다음커뮤니케이션이었으나 2014년 10월 합병하여 (주)다음카카오로 사명을 변경하였다가 2015년 9월, (주) 카카오로 사명을 변경하였다. 현재 카카오 계정으로만 회원가입 및 로그인이 가능하다.</div>
+    <div class="main google">구글(영어: Google LLC)은 구글 검색을 중심으로 스마트폰 운영체제인 안드로이드와 유튜브 사업, 클라우드 사업을 하는 미국의 기업이다. 다양한 구글 서비스들(메일, 크롬, 지도, 어스, 포토 등)과 함께 '전 세계의 모든 정보들을 체계화하여 모든 사용자가 유익하게 사용할 수 있도록 한다'라는 사명을 가지고 사업을 하고 있다. 인터넷을 사용하여 정보를 공유하는 산업의 가장 큰 기업이며 세계에서 가장 많은 데이터센터, 통신 네트워크와 함께 매일 수십억 명의 사람들에게 수백억 번의 서비스를 제공하고 있다. 2022년 7월 현재 전 세계 검색엔진, 검색량의 90% 이상의 점유율을 가지고 있다.</div>
+    
+</body>
+</html>
