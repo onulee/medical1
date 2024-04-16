@@ -18,6 +18,165 @@
 <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
+<script>
+	$(function(){
+		let c_count = 0;    //댓글 번호
+		let id = 'aaa';     //로그인 된 회원아이디
+		let update_id = "";  //댓글 id번호
+		let old_iddate = ""; //댓글 아이디,날짜
+		let old_ccont = ""; //댓글이전글 내용
+
+		//댓글 삭제함수
+		$(document).on("click",".delbtn",function(){
+			event.preventDefault(); //a태그 기능 삭제
+			console.log("id : "+$(this).parent().parent().attr("id"));
+
+			let del_id = $(this).parent().parent().attr("id");
+			if(confirm("댓글을 삭제하시겠습니까?")){
+				$("#"+del_id).remove();
+			}
+
+		});
+
+		
+		// 수정버튼 클릭시
+		$(document).on("click",".updatebtn",function(){
+			event.preventDefault();
+			alert("댓글수정창으로 이동합니다.");
+			console.log("수정버튼 id : "+$(this).parent().parent().attr("id"));
+			update_id = $(this).parent().parent().attr("id");
+			old_iddate = $("#"+update_id+" .name").html();
+			old_ccont = $("#"+update_id+" .txt").text();
+			console.log("날짜 : "+$("#"+update_id+" .name").html());
+			console.log("내용 : "+$("#"+update_id+" .txt").text());
+
+			let h_data = "";
+			h_data += '<li class="name">'+$("#"+update_id+" .name").html()+'</li>';
+			h_data += '<li class="txt"><textarea class="replyType">'+$("#"+update_id+" .txt").text()+'</textarea></li>';
+			h_data += '<li class="btn">';
+			h_data += '<a href="#" class="rebtn writebtn">완료</a> ';
+			h_data += '<a href="#" class="rebtn cancelbtn">취소</a>';
+			h_data += '</li>';
+			$("#"+update_id).html(h_data);
+		});
+
+		//취소 버튼 클릭시
+		$(document).on("click",".cancelbtn",function(){
+			event.preventDefault();
+			alert("수정을 취소합니다.");
+			console.log("id : "+update_id);
+			console.log("old_iddate : "+old_iddate);
+			console.log("old_ccont : "+old_ccont);
+			console.log("내용 : "+$("#"+update_id+" .txt").text());
+
+			//기존형태로 변경
+			let h_data = "";
+			h_data += '<li class="name">'+old_iddate+'</li>';
+			h_data += '<li class="txt">'+old_ccont+'</li>';
+			h_data += '<li class="btn">';
+			h_data += '<a href="#" class="rebtn updatebtn">수정</a> ';
+			h_data += '<a href="#" class="rebtn delbtn">삭제</a>';
+			h_data += '</li>';
+
+			$("#"+update_id).html(h_data);
+		});
+
+		//완료버튼 클릭시
+		$(document).on("click",".writebtn",function(){
+			event.preventDefault();
+			alert("댓글을 수정합니다.");
+			console.log("id : "+update_id);
+			console.log("old_iddate : "+old_iddate);
+			console.log("내용 : "+$("#"+update_id+" .replyType").val());
+
+			//기존형태로 변경
+			let h_data = "";
+			h_data += '<li class="name">'+old_iddate+'</li>';
+			h_data += '<li class="txt">'+$("#"+update_id+" .replyType").val()+'</li>';
+			h_data += '<li class="btn">';
+			h_data += '<a href="#" class="rebtn updatebtn">수정</a> ';
+			h_data += '<a href="#" class="rebtn delbtn">삭제</a>';
+			h_data += '</li>';
+
+			$("#"+update_id).html(h_data);
+		});
+
+
+
+		//댓글 1개 추가 함수
+		$(".replyBtn").click(function(){
+			event.preventDefault(); //a태그 기능 삭제함수
+			console.log("비밀번호 : "+$(".replynum").val());
+			console.log("내용 : "+$(".replyType").val());
+
+			c_count += 1; //1씩 증가
+			
+			//날짜함수
+			var today = new Date();
+			let t_day = today.getFullYear()+"-"+(String(today.getMonth()+1)).padStart(2,'0')+"-"+(String(today.getDate())).padStart(2,'0'); //2024
+			//t_day.split('-').map(str => str.padStart(2,'0')).join('-');
+			console.log(t_day);
+
+			//비밀번호
+			let pw = $(".replynum").val();
+			let ccont = $(".replyType").val();
+
+
+			//댓글저장
+			let h_data = "";
+			h_data += '<ul id="'+c_count+'">';
+			h_data += '<li class="name">'+id+' <span>['+t_day+'&nbsp;&nbsp;00:00:00]</span></li>';
+			h_data += '<li class="txt">'+ccont+'</li>';
+			h_data += '<li class="btn">';
+			h_data += '<a href="#" class="rebtn updatebtn">수정</a> ';
+			h_data += '<a href="#" class="rebtn delbtn">삭제</a>';
+			h_data += '</li>';
+			h_data += '</ul>';
+
+			$(".replyBox").prepend(h_data); //소스 위부분에 추가
+
+			//입력창 초기화
+			$(".replynum").val("");
+			$(".replyType").val("");
+			alert("댓글이 추가 되었습니다.");
+
+		});
+
+
+
+		// json데이터 가져오기 함수
+		$.ajax({
+			url:"http://127.0.0.1:5500/event/json/comment_data.json",
+			data:{},
+			type:"get",
+			dataType:"json",
+			success:function(data){
+				//alert("데이터 가져오기 성공");
+				//console.log(data);
+
+				c_count = data.length; //100
+
+				let h_data = "";
+				for(let i=0;i<10;i++){
+					h_data += '<ul id="'+data[i].cno+'">';
+					h_data += '<li class="name">'+data[i].id+' <span>['+data[i].cdate+'&nbsp;&nbsp;00:00:00]</span></li>';
+					h_data += '<li class="txt">'+data[i].ccont+'</li>';
+					h_data += '<li class="btn">';
+					if(data[i].id == "aaa"){
+						h_data += '<a href="#" class="rebtn updatebtn">수정</a> ';
+						h_data += '<a href="#" class="delbtn rebtn">삭제</a>';
+					}	
+					h_data += '</li>';
+					h_data += '</ul>';
+				}
+				//console.log(h_data);
+				$(".replyBox").html(h_data);
+			},
+			error:function(){alert("에러");	}
+		});//ajax
+
+	});//jquery
+</script>
 </head>
 <body>
 
@@ -206,8 +365,19 @@
 					</div>
 
 					<div class="replyBox">
-						<!-- 수정 폼
+						<!-- ajax내용을 추가 -->
+						<ul>
+							<li class="name">jjabcde <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span></li>
+							<li class="txt">대박!!! 이거 저한테 완전 필요한 이벤트였어요!!</li>
+							<li class="btn">
+								<a href="#" class="rebtn">수정</a>
+								<a href="#" class="rebtn">삭제</a>
+							</li>
+						</ul>
 
+
+
+						<!-- 수정 폼
 							<ul>
 								<li class="name">jjabcde <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span></li>
 								<li class="txt"><textarea class="replyType"></textarea></li>
@@ -217,17 +387,7 @@
 								</li>
 							</ul>
 						-->
-
-						<ul>
-							<li class="name">jjabcde <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span></li>
-							<li class="txt">대박!!! 이거 저한테 완전 필요한 이벤트였어요!!</li>
-							<li class="btn">
-								<a href="#" class="rebtn">수정</a>
-								<a href="#" class="rebtn">삭제</a>
-							</li>
-						</ul>
 						<!-- 비밀글 폼
-
 							<ul>
 								<li class="name">jjabcde <span>[2014-03-04&nbsp;&nbsp;15:01:59]</span></li>
 								<li class="txt">

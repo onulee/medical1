@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관광사진정보리스트</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/notice_list.css">
+  <script>
+    $(function(){
+      //관광사진갤러리 키워드 검색 목록 조회
+      $("#mbtn").click(function(){
+        let item_num = 10;
+        let gal_search = $("#gal_search").val();
+        alert(item_num);
+        $.ajax({
+          //url:"https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=918RE13GA7OY7ZEmUzApgbOeAcQoZ%2FaHsXWcqPAKQ9YNNPj83KOstRMRIUrCFIAcm9qj2R6b7NFZjp%2FYsYzJLg%3D%3D&numOfRows="+item_num+"&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json",
+          url:"https://apis.data.go.kr/B551011/PhotoGalleryService1/gallerySearchList1?serviceKey=918RE13GA7OY7ZEmUzApgbOeAcQoZ%2FaHsXWcqPAKQ9YNNPj83KOstRMRIUrCFIAcm9qj2R6b7NFZjp%2FYsYzJLg%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&keyword="+ gal_search +"&_type=json",
+          type:"get",
+          data:{},
+          dataType:"json",
+          success:function(data){
+            alert("데이터 가져오기 성공");
+            console.log(data.response.body.items);
+            console.log(data.response.body.items.item[0]);
+
+            let item_data = data.response.body.items.item;
+            console.log("개수 : "+item_data.length);
+            
+            let htmlData = "";
+            for(let i=0;i<item_data.length;i++){
+              htmlData += "<tr>";
+              htmlData += "<td>"+item_data[i].galContentId+"</td>";
+              htmlData += "<td>"+item_data[i].galTitle+"</td>";
+              htmlData += "<td>"+item_data[i].galPhotographyMonth+"</td>";
+              htmlData += "<td>"+item_data[i].galPhotographyLocation+"</td>";
+              htmlData += "<td>"+item_data[i].galWebImageUrl+"</td>";
+              htmlData += "<td>";
+              htmlData += "<img src='"+item_data[i].galWebImageUrl +"' style='width:40px;'>";
+              htmlData += "</td>";
+              htmlData += "</tr>";
+                
+              }
+              console.log("소스 : "+htmlData);
+              $("tbody").html(htmlData); //100개 회원정보 추가
+              
+
+
+          },
+          error:function(){
+            alert("ajax실패");
+          }
+        })
+      });
+
+    });
+  </script>
+  <style>
+    #mbtn{cursor: pointer;}
+  </style>
+</head>
+<body>
+  <header>
+    <ul>
+      <li>회원가입</li> <span>|</span>
+      <li>로그인</li> <span>|</span>
+      <li>고객행복센터</li> <span>|</span>
+      <li>배송지역검색</li> <span>|</span>
+      <li>기프트카드 등록</li>
+    </ul>
+  </header>
+
+  <nav>
+    <div class="logo"></div>
+
+    <div id="search">
+      <div class="search"></div><br>
+      <span>메뉴찾기</span>
+    </div>
+
+    <div id="cart">
+      <div class="cart"></div><br>
+      <span>장바구니</span>
+    </div>
+
+    <div class="nav-menu">
+      <ul>
+        <li>COOKIT소개</li>
+        <li>COOKIT 메뉴</li>
+        <li>리뷰</li>
+        <li>이벤트</li>
+        <li>MY쿡킷</li>
+      </ul>  
+    </div>
+  </nav>
+
+  <section>
+    <h1>회원정보리스트</h1>
+    <div class="wrapper">
+      <form action="#" name="search" method="post">
+        <select name="category" id="category">
+          <option value="galTitle">제목</option>
+          <option value="galPhotographyLocation">촬영장소</option>
+          <option value="galPhotographyMonth">촬영일</option>
+        </select>
+
+        <div class="title">
+          <input type="text" size="16" id="gal_search">
+        </div>
+  
+        <button type="button" id="mbtn"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+
+    <table>
+      <colgroup>
+        <col width="10%">
+        <col width="20%">
+        <col width="10%">
+        <col width="20%">
+        <col width="30%">
+        <col width="10%">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>제목</th>
+          <th>촬영일자</th>
+          <th>촬영장소</th>
+          <th>이미지위치</th>
+          <th>썸네일</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>치악산국립공원</td>
+          <td>202402</td>
+          <td>강원특별자치도 원주시 소초면</td>
+          <td>http://tong.visitkorea.or.kr/cms2/website/74/3108474.jpg</td>
+          <td><img src="http://tong.visitkorea.or.kr/cms2/website/74/3108474.jpg" style="width:40px;"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul class="page-num">
+      <li class="first"></li>
+      <li class="prev"></li>
+      <li class="num">
+        <div>1</div>
+      </li>
+      <li class="next"></li>
+      <li class="last"></li>
+    </ul>
+
+    <div class="write">쓰기</div>
+  </section>
+
+  <footer>
+    <div class="wrapper">
+      <div class="footer-left">
+        <div class="footer-logo"></div>
+        <div class="copyright">© COOKIT ALL RIGHTS RESERVED</div>
+      </div>
+  
+      <div class="footer-center">
+        <ul class="footer-nav">
+          <li class="first-list">이용약관</li>
+          <li class="green">개인정보처리 방침</li>
+          <li>법적고지</li>
+          <li>사업자정보 확인</li>
+        </ul>
+  
+        <ul class="footer-info">
+          <li class="first-list">씨제이제일제당(주)</li>
+          <li>대표이사 : 손경식,강신호,신현재</li>
+          <li>사업자등록번호 : 104-86-09535</li>
+          <li class="first-list">주소 : 서울 중구 동호로 330 CJ제일제당 센터 (우) 04560</li>
+          <li>통신판매업신고 중구 제 07767호</li>
+          <li class="first-list">개인정보보호책임자 : 조영민</li>
+          <li>이메일 : cjon@cj.net</li>
+          <li>호스팅제공자 : CJ올리브네트웍스㈜</li>
+        </ul>
+  
+        <div id="check">고객님은 안전거래를 위해 현금등으로 결제시 LG U+ 전자 결제의 매매보호(에스크로) 서비스를 이용하실 수 있습니다. <span class="check">가입 사실 확인</span></div>
+      </div>
+  
+      <div class="footer-right">
+        <div id="shortcut">
+          <span>CJ그룹계열사 바로가기</span>
+          <div class="shortcut"></div>
+        </div>
+  
+        <div class="call">고객행복센터 1668-1920</div>
+        <div class="inquery">1:1 문의</div>
+      </div>
+  
+    </div>
+  </footer>
+</body>
+</html>
