@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>쿡킷</title>
+    <style>
+        *{margin:0; padding:0;}
+        ul{list-style: none; display: flex; width:1000px; margin:20px auto;}
+        li{width:180px; height:40px; border:1px solid black; text-align: center; line-height: 38px;
+        margin-left:10px; 
+        background:white; color:black; font-weight: 400;}
+        /*
+        li:hover{background:#202020; color:white; font-weight: 700;}
+        */
+        .on{background:#202020; color:white; font-weight: 700;}
+        
+        .off{background:white; color:black; font-weight: 400;}
+        #main{width:1000px; height:300px; border:1px solid black; margin:20px auto; }
+    </style>
+    <script>
+        $(function(){
+            $("li").mouseenter(function(){
+                //$(this).addClass("on");
+                //$("#main").css({"background":"#202020","color":"white","font-weight":"700"});
+            });
+            
+            $("li").mouseleave(function(){
+                //$(this).removeClass("on");
+                //$("#main").css({"background":"white","color":"black","font-weight":"400"});
+            });
+            $("li").click(function(){
+                $(this).toggleClass("on");
+            });
+            
+
+
+        });//jquery
+    </script>
+</head>
+<body>
+    <ul>
+        <li>COOKIT소개</li>
+        <li>COOKIT 메뉴</li>
+        <li>리뷰</li>
+        <li>이벤트</li>
+        <li>MY쿡킷</li>
+    </ul>
+    <div id="main"></div>
+    
+</body>
+</html>

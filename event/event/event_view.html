@@ -160,12 +160,19 @@
 				for(let i=0;i<10;i++){
 					h_data += '<ul id="'+data[i].cno+'">';
 					h_data += '<li class="name">'+data[i].id+' <span>['+data[i].cdate+'&nbsp;&nbsp;00:00:00]</span></li>';
-					h_data += '<li class="txt">'+data[i].ccont+'</li>';
-					h_data += '<li class="btn">';
 					if(data[i].id == "aaa"){
+						h_data += '<li class="txt">'+data[i].ccont+'</li>';
+						h_data += '<li class="btn">';
 						h_data += '<a href="#" class="rebtn updatebtn">수정</a> ';
 						h_data += '<a href="#" class="delbtn rebtn">삭제</a>';
-					}	
+					}else{
+						if(data[i].cpw == ""){
+							h_data += '<li class="txt">'+data[i].ccont+'</li>';
+						}else{
+							h_data += '<li class="txt"><span class="orange">※ 비밀글입니다.</span></li>';
+						}
+						h_data += '<li class="btn">';
+					}
 					h_data += '</li>';
 					h_data += '</ul>';
 				}

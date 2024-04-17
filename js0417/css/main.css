@@ -1,0 +1,33 @@
+*{margin:0; padding:0;}
+#main{width:1200px; margin:50px auto; }
+#main h2{text-align: center; margin-bottom:20px;}
+#main .search_wrap{width:400px; height:40px; margin:20px auto; }
+#main .search_wrap input{width:250px; height:36px;  margin:0 auto; }
+#searchBtn {display: inline-block; width:130px; height:40px;
+    margin-left:10px; font-size: 17px;}
+#main>table{border-collapse: collapse; width:1200px; }
+#main th{height:45px; background: #efefef; text-align: center;
+    border:1px solid black;}
+#main td{height:40px; text-align: center; border:1px solid black;}
+#button{margin-top:30px; display: flex; justify-content: flex-end;
+width:1200px;  }
+#button button{display: inline-block; width:130px; height:40px;
+margin-left:10px; font-size: 17px; }
+
+.p_all{width:100%; height:100%; background:rgba(0,0,0,0.4);
+position: absolute; top:0; display: none;
+
+}
+.p_main{width:600px; height:450px; border:1px solid #ddd; margin:0 auto;
+background:white; position:relative; top:25%;}
+.p_main h2{text-align: center; font-size: 40px; color:#333; font-weight: 700;; margin:40px 0;}
+.p_main table{width:600px;  border-collapse: collapse; font-size:20px; color:#666;}
+.p_main th { padding-left: 50px; text-align: left; }
+.p_main td{height:50px; }
+.p_main input[type='text']{width:400px; height:40px; padding-left:20px; box-sizing: border-box;
+border:1px solid #ddd; font-size:20px; }
+.p_main button{width:140px; height:40px; background:#96694c; color:white; font-weight: 700;
+font-size:18px; border:0;}
+#in_btn{text-align: center; height:100px;}
+        
+       

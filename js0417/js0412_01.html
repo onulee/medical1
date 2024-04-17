@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>학생성적프로그램</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <section id="main">
+        <h2>학생성적프로그램</h2>
+        <div class="search_wrap">
+            <input type="text" name="s_word" id="s_word">
+            <button id="searchBtn">검색</button>
+        </div>
+        
+        <table>
+            <colgroup>
+                <col width="8%">
+                <col width="8%">
+                <col width="*">
+                <col width="8%">
+                <col width="8%">
+                <col width="8%">
+                <col width="12%">
+                <col width="12%">
+                <col width="12%">
+                <col width="10%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="allChk" id="allChk" value="allChk"></th>
+                    <th>학번</th>
+                    <th>이름</th>
+                    <th>국어</th>
+                    <th>영어</th>
+                    <th>수학</th>
+                    <th>합계</th>
+                    <th>평균</th>
+                    <th>등수</th>
+                    <th>삭제</th>
+                </tr>
+            </thead>
+            <tbody id="body">
+                
+                
+            </tbody>
+        </table>
+        <div id="button">
+            <button id="writeBtn">학생입력</button>
+            <button id="modifyBtn">학생수정</button>
+            <button id="deleteBtn">학생삭제</button>
+        </div>
+    </section>
+
+    <div class="p_all">
+        <div class="p_main">
+            <h2>학생성적입력</h2>
+            <form action="#" name="frm" method="get">
+                <input type="hidden" name="id" id="id" value="">
+                <table>
+                    <colgroup>
+                        <col width="150px">
+                        <col width="400px">
+                    </colgroup>
+                    <tr>
+                        <th>이름</th>
+                        <td><input type="text" name="name" id="name" readonly></td>
+                    </tr>
+                    <tr>
+                        <th>국어점수</th>
+                        <td><input type="text" name="kor" id="kor"></td>
+                    </tr>
+                    <tr>
+                        <th>영어점수</th>
+                        <td><input type="text" name="eng" id="eng"></td>
+                    </tr>
+                    <tr>
+                        <th>수학점수</th>
+                        <td><input type="text" name="math" id="math"></td>
+                    </tr>
+                    <tr>
+                        <td id="in_btn" colspan="2">
+                            <button type="button" id="confirmBtn">확인</button>
+                            <button type="button" id="cancelBtn">취소</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
