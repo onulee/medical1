@@ -1,8 +1,8 @@
 import requests
 # 웹에 접근해서 html소스를 가져옴.
-# res = requests.get("https://www.google.com/")
+res = requests.get("https://www.google.com/")
 # res = requests.get("https://www.daum.net/")
-res = requests.get("https://www.melon.com/index.htm")
+#res = requests.get("https://www.melon.com/index.htm")
 # 200 : 정상, 403,404 : 페이지없음  500: 프로그램에러
 print(res) # 코드상태 출력
 print("코드 : ",res.status_code) # 리턴한 소스의 코드값을 출력
