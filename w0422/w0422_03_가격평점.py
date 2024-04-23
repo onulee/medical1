@@ -41,6 +41,8 @@ for i,itemcard in enumerate(itemcards[0:10]):
         print("구매건수 : ",buycnt)        
     
     print("-"*40)
+    
+    
 
 
 
