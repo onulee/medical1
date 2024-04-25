@@ -15,13 +15,13 @@ browser.maximize_window() # 창 최대화
 browser.get(url)
 
 
-# 요소선택, 문자입력, enter키 입력, click, 스크롤이동,마우스이동
+# 요소선택, 문자입력, enter키 입력, click, 스크롤이동, 마우스이동
 elem = browser.find_element(By.ID,'query')
 elem.send_keys('시가총액')
 elem.send_keys(Keys.ENTER) #input박스에서 enter키 입력
 
 # 시가총액 더보기 클릭
-elem = browser.find_element(By.XPATH,'//*[@id="main_pack"]/section[1]/div/div[2]/div[2]/div[1]/div[2]/a')
+elem = browser.find_element(By.XPATH,'//*[@id="__next"]/div/main/div[11]/div[1]/div/input')
 elem.click()
 
 time.sleep(100)
