@@ -1,4 +1,4 @@
--- Å×ÀÌºí »ı¼º
+-- í…Œì´ë¸” ìƒì„±
 create table stu_score(
   no number(4) primary key,
   name varchar2(30),
@@ -9,18 +9,18 @@ create table stu_score(
   avg number(6)
 );
 
--- 1°³ µ¥ÀÌÅÍ ÀÔ·Â: insert
+-- 1ê°œ ë°ì´í„° ì…ë ¥: insert
 insert into stu_score (no,name,kor,eng,math,total,avg) values(
- 1,'È«±æµ¿',58,99,95,(58+99+95),(58+99+95)/3
+ 1,'í™ê¸¸ë™',58,99,95,(58+99+95),(58+99+95)/3
 );
 
--- µ¥ÀÌÅÍ °Ë»ö :select
+-- ë°ì´í„° ê²€ìƒ‰ :select
 select * from stu_score;
 
 commit;
 
--- 1°³ µ¥ÀÌÅÍ ¼öÁ¤ : update
-update stu_score set name='È«±æÀÚ' where no=1;
+-- 1ê°œ ë°ì´í„° ìˆ˜ì • : update
+update stu_score set name='í™ê¸¸ì' where no=1;
 
 select * from stu_score;
 
@@ -28,7 +28,7 @@ rollback;
 
 desc stu_score;
 
--- »èÁ¦ : delete
+-- ì‚­ì œ : delete
 delete stu_score where no=1;
 
 select * from stu_score;
