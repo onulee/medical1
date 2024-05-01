@@ -310,7 +310,7 @@ order by kor desc ) b
 where rnum>=21 and rnum<=30
 ;
 
-
+select rownum,a.* from stu_score a;
 
 
 
