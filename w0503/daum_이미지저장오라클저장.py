@@ -60,9 +60,12 @@ for year in range(2020,2024):
         print("-"*50)
         
         # db저장
-        sql =f"insert into daum_movie values (movie_seq.nextval,'{title}','{img}',\
-        '{audience}','{d_ddate}')"
-        cursor.execute(sql)
+        # sql =f"insert into daum_movie values (movie_seq.nextval,'{title}','{img}',\
+        # '{audience}','{d_ddate}')"
+        
+        sql = "insert into daum_movie values (movie_seq.nextval,:1,:2,:3,:4)"
+        
+        cursor.execute(sql,(title,img,audience,d_ddate))
         cursor.execute('commit')
    
 print("종료")
