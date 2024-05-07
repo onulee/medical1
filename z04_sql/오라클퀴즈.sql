@@ -209,5 +209,12 @@ mdate date
 insert into mmdate values (TO_DATE('2024-06-27 06:00:00','yyyy-mm-dd HH24:MI:SS') );
 
 
+delete daum_movie 
+;
+
+commit;
+
+select * from daum_movie;
+
 
 
