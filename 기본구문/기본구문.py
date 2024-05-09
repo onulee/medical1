@@ -19,7 +19,7 @@ df
 # s_data
 
 # replace:문자열 처리, strip:공백제거
-
+df['item_price'] = df['item_price'].str.replace("$","").astype(float)
 
 # 조건 &, |
 filt  = df['키']>188  #조건식 loc
